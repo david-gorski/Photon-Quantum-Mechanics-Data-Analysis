@@ -1,0 +1,401 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'data_trigger_counter:C0|lpm_counter:lpm_counter_component|cntr_u8i:auto_generated|counter_reg_bit[0]'
+Slack : -28.796
+TNS   : -6967.717
+
+Type  : Slow 1200mV 85C Model Setup 'GPIO_3'
+Slack : -26.147
+TNS   : -3981.270
+
+Type  : Slow 1200mV 85C Model Setup 'GPIO_33'
+Slack : -26.029
+TNS   : -3988.569
+
+Type  : Slow 1200mV 85C Model Setup 'GPIO_29'
+Slack : -25.918
+TNS   : -3950.505
+
+Type  : Slow 1200mV 85C Model Setup 'GPIO_7'
+Slack : -25.656
+TNS   : -3898.170
+
+Type  : Slow 1200mV 85C Model Setup 'baud_counter:C1|lpm_counter:lpm_counter_component|cntr_s8i:auto_generated|counter_reg_bit[0]'
+Slack : -7.696
+TNS   : -282.441
+
+Type  : Slow 1200mV 85C Model Setup 'Clock_50'
+Slack : -1.424
+TNS   : -12.922
+
+Type  : Slow 1200mV 85C Model Hold 'GPIO_33'
+Slack : -21.587
+TNS   : -3295.502
+
+Type  : Slow 1200mV 85C Model Hold 'GPIO_29'
+Slack : -21.543
+TNS   : -3267.742
+
+Type  : Slow 1200mV 85C Model Hold 'GPIO_7'
+Slack : -21.167
+TNS   : -3202.482
+
+Type  : Slow 1200mV 85C Model Hold 'GPIO_3'
+Slack : -20.670
+TNS   : -3151.595
+
+Type  : Slow 1200mV 85C Model Hold 'baud_counter:C1|lpm_counter:lpm_counter_component|cntr_s8i:auto_generated|counter_reg_bit[0]'
+Slack : -1.618
+TNS   : -18.338
+
+Type  : Slow 1200mV 85C Model Hold 'Clock_50'
+Slack : -1.407
+TNS   : -12.263
+
+Type  : Slow 1200mV 85C Model Hold 'data_trigger_counter:C0|lpm_counter:lpm_counter_component|cntr_u8i:auto_generated|counter_reg_bit[0]'
+Slack : 4.558
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'Clock_50'
+Slack : -5.409
+TNS   : -70.317
+
+Type  : Slow 1200mV 85C Model Recovery 'baud_counter:C1|lpm_counter:lpm_counter_component|cntr_s8i:auto_generated|counter_reg_bit[0]'
+Slack : -5.325
+TNS   : -78.502
+
+Type  : Slow 1200mV 85C Model Recovery 'GPIO_3'
+Slack : -1.618
+TNS   : -86.224
+
+Type  : Slow 1200mV 85C Model Recovery 'GPIO_29'
+Slack : -1.395
+TNS   : -60.976
+
+Type  : Slow 1200mV 85C Model Recovery 'GPIO_7'
+Slack : -0.912
+TNS   : -29.184
+
+Type  : Slow 1200mV 85C Model Recovery 'GPIO_33'
+Slack : -0.772
+TNS   : -50.736
+
+Type  : Slow 1200mV 85C Model Removal 'GPIO_33'
+Slack : -27.862
+TNS   : -4392.688
+
+Type  : Slow 1200mV 85C Model Removal 'GPIO_29'
+Slack : -27.814
+TNS   : -4345.360
+
+Type  : Slow 1200mV 85C Model Removal 'GPIO_7'
+Slack : -27.440
+TNS   : -4294.736
+
+Type  : Slow 1200mV 85C Model Removal 'GPIO_3'
+Slack : -26.965
+TNS   : -4225.328
+
+Type  : Slow 1200mV 85C Model Removal 'baud_counter:C1|lpm_counter:lpm_counter_component|cntr_s8i:auto_generated|counter_reg_bit[0]'
+Slack : -0.763
+TNS   : -0.763
+
+Type  : Slow 1200mV 85C Model Removal 'Clock_50'
+Slack : 1.526
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'GPIO_7'
+Slack : -13.878
+TNS   : -9973.490
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'GPIO_33'
+Slack : -13.395
+TNS   : -9723.241
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'GPIO_3'
+Slack : -13.289
+TNS   : -9530.732
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'GPIO_29'
+Slack : -13.275
+TNS   : -9607.163
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Clock_50'
+Slack : -3.000
+TNS   : -19.705
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'baud_counter:C1|lpm_counter:lpm_counter_component|cntr_s8i:auto_generated|counter_reg_bit[0]'
+Slack : -2.693
+TNS   : -72.083
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'data_trigger_counter:C0|lpm_counter:lpm_counter_component|cntr_u8i:auto_generated|counter_reg_bit[0]'
+Slack : -1.285
+TNS   : -328.960
+
+Type  : Slow 1200mV 0C Model Setup 'data_trigger_counter:C0|lpm_counter:lpm_counter_component|cntr_u8i:auto_generated|counter_reg_bit[0]'
+Slack : -25.941
+TNS   : -6263.175
+
+Type  : Slow 1200mV 0C Model Setup 'GPIO_3'
+Slack : -23.417
+TNS   : -3563.472
+
+Type  : Slow 1200mV 0C Model Setup 'GPIO_33'
+Slack : -23.346
+TNS   : -3571.016
+
+Type  : Slow 1200mV 0C Model Setup 'GPIO_29'
+Slack : -23.242
+TNS   : -3536.143
+
+Type  : Slow 1200mV 0C Model Setup 'GPIO_7'
+Slack : -23.023
+TNS   : -3490.990
+
+Type  : Slow 1200mV 0C Model Setup 'baud_counter:C1|lpm_counter:lpm_counter_component|cntr_s8i:auto_generated|counter_reg_bit[0]'
+Slack : -7.017
+TNS   : -253.152
+
+Type  : Slow 1200mV 0C Model Setup 'Clock_50'
+Slack : -1.159
+TNS   : -10.251
+
+Type  : Slow 1200mV 0C Model Hold 'GPIO_33'
+Slack : -19.309
+TNS   : -2948.397
+
+Type  : Slow 1200mV 0C Model Hold 'GPIO_29'
+Slack : -19.282
+TNS   : -2924.922
+
+Type  : Slow 1200mV 0C Model Hold 'GPIO_7'
+Slack : -18.936
+TNS   : -2865.206
+
+Type  : Slow 1200mV 0C Model Hold 'GPIO_3'
+Slack : -18.484
+TNS   : -2818.575
+
+Type  : Slow 1200mV 0C Model Hold 'baud_counter:C1|lpm_counter:lpm_counter_component|cntr_s8i:auto_generated|counter_reg_bit[0]'
+Slack : -1.592
+TNS   : -17.916
+
+Type  : Slow 1200mV 0C Model Hold 'Clock_50'
+Slack : -1.263
+TNS   : -11.129
+
+Type  : Slow 1200mV 0C Model Hold 'data_trigger_counter:C0|lpm_counter:lpm_counter_component|cntr_u8i:auto_generated|counter_reg_bit[0]'
+Slack : 4.260
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'Clock_50'
+Slack : -4.808
+TNS   : -62.504
+
+Type  : Slow 1200mV 0C Model Recovery 'baud_counter:C1|lpm_counter:lpm_counter_component|cntr_s8i:auto_generated|counter_reg_bit[0]'
+Slack : -4.750
+TNS   : -70.068
+
+Type  : Slow 1200mV 0C Model Recovery 'GPIO_3'
+Slack : -1.443
+TNS   : -73.712
+
+Type  : Slow 1200mV 0C Model Recovery 'GPIO_29'
+Slack : -1.231
+TNS   : -51.136
+
+Type  : Slow 1200mV 0C Model Recovery 'GPIO_7'
+Slack : -0.810
+TNS   : -25.920
+
+Type  : Slow 1200mV 0C Model Recovery 'GPIO_33'
+Slack : -0.641
+TNS   : -41.504
+
+Type  : Slow 1200mV 0C Model Removal 'GPIO_33'
+Slack : -25.170
+TNS   : -3966.256
+
+Type  : Slow 1200mV 0C Model Removal 'GPIO_29'
+Slack : -25.137
+TNS   : -3924.176
+
+Type  : Slow 1200mV 0C Model Removal 'GPIO_7'
+Slack : -24.792
+TNS   : -3877.248
+
+Type  : Slow 1200mV 0C Model Removal 'GPIO_3'
+Slack : -24.364
+TNS   : -3814.336
+
+Type  : Slow 1200mV 0C Model Removal 'baud_counter:C1|lpm_counter:lpm_counter_component|cntr_s8i:auto_generated|counter_reg_bit[0]'
+Slack : -0.709
+TNS   : -0.709
+
+Type  : Slow 1200mV 0C Model Removal 'Clock_50'
+Slack : 1.277
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'GPIO_7'
+Slack : -12.732
+TNS   : -9078.925
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'GPIO_33'
+Slack : -12.304
+TNS   : -8851.989
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'GPIO_29'
+Slack : -12.091
+TNS   : -8747.339
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'GPIO_3'
+Slack : -12.010
+TNS   : -8670.915
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Clock_50'
+Slack : -3.000
+TNS   : -19.705
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'baud_counter:C1|lpm_counter:lpm_counter_component|cntr_s8i:auto_generated|counter_reg_bit[0]'
+Slack : -2.649
+TNS   : -72.039
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'data_trigger_counter:C0|lpm_counter:lpm_counter_component|cntr_u8i:auto_generated|counter_reg_bit[0]'
+Slack : -1.285
+TNS   : -328.960
+
+Type  : Fast 1200mV 0C Model Setup 'data_trigger_counter:C0|lpm_counter:lpm_counter_component|cntr_u8i:auto_generated|counter_reg_bit[0]'
+Slack : -14.100
+TNS   : -3404.683
+
+Type  : Fast 1200mV 0C Model Setup 'GPIO_3'
+Slack : -13.139
+TNS   : -1992.456
+
+Type  : Fast 1200mV 0C Model Setup 'GPIO_33'
+Slack : -13.011
+TNS   : -1988.196
+
+Type  : Fast 1200mV 0C Model Setup 'GPIO_29'
+Slack : -12.961
+TNS   : -1967.777
+
+Type  : Fast 1200mV 0C Model Setup 'GPIO_7'
+Slack : -12.821
+TNS   : -1943.063
+
+Type  : Fast 1200mV 0C Model Setup 'baud_counter:C1|lpm_counter:lpm_counter_component|cntr_s8i:auto_generated|counter_reg_bit[0]'
+Slack : -3.224
+TNS   : -107.397
+
+Type  : Fast 1200mV 0C Model Setup 'Clock_50'
+Slack : -0.182
+TNS   : -0.579
+
+Type  : Fast 1200mV 0C Model Hold 'GPIO_33'
+Slack : -10.846
+TNS   : -1659.029
+
+Type  : Fast 1200mV 0C Model Hold 'GPIO_29'
+Slack : -10.777
+TNS   : -1637.253
+
+Type  : Fast 1200mV 0C Model Hold 'GPIO_7'
+Slack : -10.682
+TNS   : -1619.231
+
+Type  : Fast 1200mV 0C Model Hold 'GPIO_3'
+Slack : -10.336
+TNS   : -1580.662
+
+Type  : Fast 1200mV 0C Model Hold 'Clock_50'
+Slack : -0.790
+TNS   : -7.242
+
+Type  : Fast 1200mV 0C Model Hold 'baud_counter:C1|lpm_counter:lpm_counter_component|cntr_s8i:auto_generated|counter_reg_bit[0]'
+Slack : -0.772
+TNS   : -14.295
+
+Type  : Fast 1200mV 0C Model Hold 'data_trigger_counter:C0|lpm_counter:lpm_counter_component|cntr_u8i:auto_generated|counter_reg_bit[0]'
+Slack : 2.482
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'Clock_50'
+Slack : -2.362
+TNS   : -30.706
+
+Type  : Fast 1200mV 0C Model Recovery 'baud_counter:C1|lpm_counter:lpm_counter_component|cntr_s8i:auto_generated|counter_reg_bit[0]'
+Slack : -2.266
+TNS   : -33.225
+
+Type  : Fast 1200mV 0C Model Recovery 'GPIO_3'
+Slack : -0.638
+TNS   : -30.208
+
+Type  : Fast 1200mV 0C Model Recovery 'GPIO_29'
+Slack : -0.472
+TNS   : -15.104
+
+Type  : Fast 1200mV 0C Model Recovery 'GPIO_7'
+Slack : -0.238
+TNS   : -7.616
+
+Type  : Fast 1200mV 0C Model Recovery 'GPIO_33'
+Slack : -0.175
+TNS   : -9.600
+
+Type  : Fast 1200mV 0C Model Removal 'GPIO_33'
+Slack : -14.094
+TNS   : -2222.608
+
+Type  : Fast 1200mV 0C Model Removal 'GPIO_29'
+Slack : -14.021
+TNS   : -2191.520
+
+Type  : Fast 1200mV 0C Model Removal 'GPIO_7'
+Slack : -13.927
+TNS   : -2180.592
+
+Type  : Fast 1200mV 0C Model Removal 'GPIO_3'
+Slack : -13.604
+TNS   : -2132.576
+
+Type  : Fast 1200mV 0C Model Removal 'baud_counter:C1|lpm_counter:lpm_counter_component|cntr_s8i:auto_generated|counter_reg_bit[0]'
+Slack : -0.392
+TNS   : -0.392
+
+Type  : Fast 1200mV 0C Model Removal 'Clock_50'
+Slack : 0.902
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'GPIO_7'
+Slack : -7.451
+TNS   : -5095.354
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'GPIO_33'
+Slack : -7.161
+TNS   : -4986.074
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'GPIO_3'
+Slack : -7.097
+TNS   : -4897.287
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'GPIO_29'
+Slack : -7.084
+TNS   : -4902.208
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Clock_50'
+Slack : -3.000
+TNS   : -29.286
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'data_trigger_counter:C0|lpm_counter:lpm_counter_component|cntr_u8i:auto_generated|counter_reg_bit[0]'
+Slack : -1.899
+TNS   : -486.144
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'baud_counter:C1|lpm_counter:lpm_counter_component|cntr_s8i:auto_generated|counter_reg_bit[0]'
+Slack : -1.899
+TNS   : -103.546
+
+------------------------------------------------------------

@@ -1,0 +1,16 @@
+Fitter Status : Successful - Fri Jun 22 16:23:55 2012
+Quartus II Version : 10.0 Build 218 06/27/2010 SJ Web Edition
+Revision Name : RS232coincidencecounter
+Top-level Entity Name : RS232coincidencecounter
+Family : Cyclone IV E
+Device : EP4CE115F29C7
+Timing Models : Final
+Total logic elements : 907 / 114,480 ( < 1 % )
+    Total combinational functions : 731 / 114,480 ( < 1 % )
+    Dedicated logic registers : 579 / 114,480 ( < 1 % )
+Total registers : 579
+Total pins : 49 / 529 ( 9 % )
+Total virtual pins : 0
+Total memory bits : 3,072 / 3,981,312 ( < 1 % )
+Embedded Multiplier 9-bit elements : 0 / 532 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )

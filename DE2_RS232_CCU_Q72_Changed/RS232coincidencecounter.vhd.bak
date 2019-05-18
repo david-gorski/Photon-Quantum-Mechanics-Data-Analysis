@@ -1,0 +1,346 @@
+-- Coincidence Counter Circuit Using Asynchronous Delay
+-- Finished April 7th 2008, Whitman College
+-- Designed by Mark Beck, beckmk@whitman.edu and Jesse Lord, lordjw@whitman.edu
+-------------------------------------------------------------------------------
+-- This circuit takes input signals from four photon detectors
+-- and shortens each pulse to decrease unintended overlap of signals;
+-- thus decreasing the number of false coincidence detections.
+-- In this design file, the input pulses are obtained using the GPIO_0
+-- The shortened single photon detection signal and coincidence photon
+-- detections are output on the RS232 port using signal UART_TXD
+
+-- top level entity
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+ENTITY RS232coincidencecounter IS
+	PORT
+	(
+-- The transmitter to the RS-232 port where the data is sent out to LabView
+		UART_TXD	:OUT	STD_LOGIC;
+-- Dummy variables used to coerce the compiler into fitting the "pulse_ander" COMPONENTs
+-- onto the FPGA chip; these variables serve no purpose in the final implementation of the design
+		Dummy_in	:IN		STD_LOGIC_VECTOR(12 DOWNTO 0);
+		Dummy_out	:OUT	STD_LOGIC_VECTOR(55 DOWNTO 0);
+-- The 50 MHz clock that is provided on the DE2 Board
+		Clock_50	:IN		STD_LOGIC;
+-- The key button 0, holding down this button will stop this program from
+-- functioning on the DE2 board
+		KEY			:IN		STD_LOGIC_VECTOR(0 DOWNTO 0);
+-- The switchs 0 through 17 on the DE2 Board	
+		SW			:IN		STD_LOGIC_VECTOR(17 DOWNTO 0);
+-- The 40 pin expansion header GPIO_0 pins, which can be used as input or output signals
+-- (note that the pins on the expansion header do not match the pin assignments used by
+--  Quartus II when programming the DE2 Board)		
+		GPIO_0		:IN		STD_LOGIC_VECTOR(16 DOWNTO 10);
+-- The 40 pin expansion header GPIO_0 pins, which can be used as input or output signals
+-- (note that the pins on the expansion header do not match the pin assignments used by
+--  Quartus II when programming the DE2 Board)		
+		GPIO_1		:OUT	STD_LOGIC_VECTOR(35 DOWNTO 0);
+-- The red LED lights 0 through 17 on the DE2 Board
+		LEDR		:OUT	STD_LOGIC_VECTOR(17 DOWNTO 0)
+	);
+END RS232coincidencecounter;
+
+ARCHITECTURE Behavior OF RS232coincidencecounter IS
+-- This COMPONENT takes an input pulse and delays the pulse by ANDing it with SW(17)
+	COMPONENT pulse_ander
+		PORT
+		(
+			pulse			:IN		STD_LOGIC;
+			KEY				:IN		STD_LOGIC;
+			pulse_out		:OUT	STD_LOGIC;
+			pulse_top		:OUT	STD_LOGIC
+		);
+	END COMPONENT;
+-- This component chooses one of the three delayed pulses, inverts the chosen pulse,
+-- then ANDs the inverted, delayed pulse with the original (effectively shortening the original)
+	COMPONENT mux4to1
+		PORT
+		(
+			delayedpulse_0	:IN		STD_LOGIC;
+			delayedpulse_1	:IN		STD_LOGIC;	
+			delayedpulse_2	:IN		STD_LOGIC;		
+			pulse			:IN		STD_LOGIC;
+			SW				:IN		STD_LOGIC_VECTOR(1 DOWNTO 0);
+			pulseout		:OUT	STD_LOGIC
+		);
+	END COMPONENT;
+-- This COMPONENT outputs one pulse for each coincidence by using a four input AND gate to combine the photon detector signals
+	COMPONENT coincidence_pulse
+		PORT
+		(
+			a, b, c, d, e, f, g, h	:IN	 STD_LOGIC;
+			y						:OUT STD_LOGIC
+		);
+	END COMPONENT;	
+-- This COMPONENT is the Megafunction "lpm_counter" using a 14 bit output and an asynchronous clear
+	COMPONENT data_trigger_counter
+		PORT
+		(
+			aclr	: IN 	STD_LOGIC;
+			clock	: IN 	STD_LOGIC;
+			q		: OUT 	STD_LOGIC_VECTOR (14 DOWNTO 0)
+		);
+	END COMPONENT;	
+-- This COMPONENT is the Megafunction "lpm_counter" using a 13 bit output and an asynchronous clear
+	COMPONENT baud_counter
+		PORT
+		(
+			aclr	: IN 	STD_LOGIC;
+			clock	: IN 	STD_LOGIC;
+			q		: OUT 	STD_LOGIC_VECTOR (12 DOWNTO 0)
+		);
+	END COMPONENT;	
+-- This COMPONENT is the Megafunction "lpm_counter" using a 32 bit output and an asynchronous clear
+	COMPONENT counter
+		PORT
+		(
+			aclr	: IN	STD_LOGIC;
+			clock	: IN	STD_LOGIC;
+			q		: OUT	STD_LOGIC_VECTOR (31 DOWNTO 0)
+		);
+	END COMPONENT;
+-- This COMPONENT takes in the single photon and coincidence photon counts and sends it out
+-- on the RS232 port, the data stream is started by data_trigger every 1/10th of a second
+-- and the rate of the data_stream is controled by the 19200 bits/sec baud clock
+	COMPONENT DataOut
+		PORT
+		(
+			A				:IN		STD_LOGIC_VECTOR(31 DOWNTO 0);
+			B				:IN		STD_LOGIC_VECTOR(31 DOWNTO 0);
+			C				:IN		STD_LOGIC_VECTOR(31 DOWNTO 0);
+			D				:IN		STD_LOGIC_VECTOR(31 DOWNTO 0);
+			Coincidence_0	:IN		STD_LOGIC_VECTOR(31 DOWNTO 0);
+			Coincidence_1	:IN		STD_LOGIC_VECTOR(31 DOWNTO 0);
+			Coincidence_2	:IN		STD_LOGIC_VECTOR(31 DOWNTO 0);
+			Coincidence_3	:IN		STD_LOGIC_VECTOR(31 DOWNTO 0);
+			clk				:IN		STD_LOGIC;
+			data_trigger	:IN		STD_LOGIC;
+			UART_TXD		:OUT	STD_LOGIC
+		);
+	END COMPONENT;
+
+-- This SIGNAL counts the baud clock until it reaches 1920, which occurs every 1/10th of a second
+	SIGNAL data_trigger_count: STD_LOGIC_VECTOR(14 DOWNTO 0);
+-- This SIGNAL is turned on every 1/10th of a second for one 50 MHz clock pulse and resets
+-- the photon detection counters
+	SIGNAL data_trigger_reset: STD_LOGIC;
+-- This SIGNAL is turned on every 1/10th of a second and begins the data stream out
+	SIGNAL data_trigger: STD_LOGIC;
+-- This SIGNAL acts as a clock to output data at the baud rate of 19200 bits/second
+	SIGNAL baud_rate_clk: STD_LOGIC;
+-- This SIGNAL counts the 50 MHz clock pulses until it reaches 2604 in order to time the baud clock
+	SIGNAL baud_rate_count: STD_LOGIC_VECTOR(12 DOWNTO 0);
+-- These SIGNALs represent the four input pulse from the photon detectors		
+	SIGNAL A, B, C, D: STD_LOGIC;
+-- These SIGNALs represent the three shortened versions of the pulse, one of which
+-- (along with the original signal) will be chosen by the 4-to-1 mux
+	SIGNAL A_internal, B_internal, C_internal, D_internal: STD_LOGIC_VECTOR(13 DOWNTO 0);
+-- These SIGNALs represent the shortened pulses output by the mux4to1 COMPONENT		
+	SIGNAL A_s, B_s, C_s, D_s: STD_LOGIC;
+-- These SIGNALs represent the four output pulses	
+	SIGNAL A_f, B_f, C_f, D_f: STD_LOGIC;
+-- This SIGNAL represents the output of the four input AND gate that detects each coincidence
+	SIGNAL Coincidence_0, Coincidence_1, Coincidence_2, Coincidence_3: STD_LOGIC;
+-- This SIGNAL represents the top level design entity instantiation of
+-- the number of coincidences counted
+	SIGNAL Count_top_0, Count_top_1, Count_top_2, Count_top_3: STD_LOGIC_VECTOR(31 DOWNTO 0);
+-- This SIGNAL represents the the number of coincidences counted
+	SIGNAL Count_out_0, Count_out_1, Count_out_2, Count_out_3: STD_LOGIC_VECTOR(31 DOWNTO 0);
+-- This SIGNAL represents the top level design entity instantiation of the number of counts
+-- in the detectors A, B, C, and D respectively
+	SIGNAL A_top, B_top, C_top, D_top: STD_LOGIC_VECTOR(31 DOWNTO 0);
+-- This SIGNAL represents the number of counts in the detectors A, B, C, and D respectively
+	SIGNAL A_out, B_out, C_out, D_out: STD_LOGIC_VECTOR(31 DOWNTO 0);
+-- This SIGNAL is the only variable that is sent to the computer from the program	
+	SIGNAL Output: STD_LOGIC_VECTOR(31 DOWNTO 0);
+
+BEGIN
+-- This initializes the input SPCMs signals
+-- Note that for this current circuit design A -> A, B -> B, A` -> C, and B` -> D
+	A <= GPIO_0(10);
+	B <= GPIO_0(12);
+	C <= GPIO_0(14);
+	D <= GPIO_0(16);
+	
+-- These COMPONENTs shape the input pulses based on switchs 17 and 16 (i.e. SW(17) and SW(16))
+-- For both switches off the input pulse is left alone
+-- For SW(16) on and SW(17) off the input pulse is delayed (approximately 15 ns), inverted and ANDed with the original pulse (shortening the original to 15 ns)
+-- For SW(16) off and SW(17) on the input pulse is delayed (approximately 10 ns), inverted and ANDed with the original pulse (shortening the original to 10 ns)
+-- For both switches on the input pulse is delayed (approximately 5 ns), inverted and ANDed with the original pulse (shortening the original to 5 ns)
+-- The COMPONENTs pulse_ander delays the input signal, and the COMPONENT mux4to1 chooses the amount of delay and shortens the pulse
+	PA0: pulse_ander PORT MAP( A, KEY(0), Dummy_out(0), A_internal(0) );
+	PA1: pulse_ander PORT MAP( A_internal(0), Dummy_in(0), Dummy_out(1), A_internal(1) );
+	PA2: pulse_ander PORT MAP( A_internal(1), Dummy_in(1), Dummy_out(2), A_internal(2) );
+	PA3: pulse_ander PORT MAP( A_internal(2), Dummy_in(2), Dummy_out(3), A_internal(3) );
+	PA4: pulse_ander PORT MAP( A_internal(3), Dummy_in(3), Dummy_out(4), A_internal(4) );
+	PA5: pulse_ander PORT MAP( A_internal(4), Dummy_in(4), Dummy_out(5), A_internal(5) );
+	PA6: pulse_ander PORT MAP( A_internal(5), Dummy_in(5), Dummy_out(6), A_internal(6) );
+	PA7: pulse_ander PORT MAP( A_internal(6), Dummy_in(6), Dummy_out(7), A_internal(7) );
+	PA8: pulse_ander PORT MAP( A_internal(7), Dummy_in(7), Dummy_out(8), A_internal(8) );
+	PA9: pulse_ander PORT MAP( A_internal(8), Dummy_in(8), Dummy_out(9), A_internal(9) );
+	PA10: pulse_ander PORT MAP( A_internal(9), Dummy_in(9), Dummy_out(10), A_internal(10) );
+	PA11: pulse_ander PORT MAP( A_internal(10), Dummy_in(10), Dummy_out(11), A_internal(11) );
+	PA12: pulse_ander PORT MAP( A_internal(11), Dummy_in(11), Dummy_out(12), A_internal(12) );
+	PA13: pulse_ander PORT MAP( A_internal(12), Dummy_in(12), Dummy_out(13), A_internal(13) );
+	
+	PB0: pulse_ander PORT MAP( B, KEY(0), Dummy_out(14), B_internal(0) );
+	PB1: pulse_ander PORT MAP( B_internal(0), Dummy_in(0), Dummy_out(15), B_internal(1) );
+	PB2: pulse_ander PORT MAP( B_internal(1), Dummy_in(1), Dummy_out(16), B_internal(2) );
+	PB3: pulse_ander PORT MAP( B_internal(2), Dummy_in(2), Dummy_out(17), B_internal(3) );
+	PB4: pulse_ander PORT MAP( B_internal(3), Dummy_in(3), Dummy_out(18), B_internal(4) );
+	PB5: pulse_ander PORT MAP( B_internal(4), Dummy_in(4), Dummy_out(19), B_internal(5) );
+	PB6: pulse_ander PORT MAP( B_internal(5), Dummy_in(5), Dummy_out(20), B_internal(6) );
+	PB7: pulse_ander PORT MAP( B_internal(6), Dummy_in(6), Dummy_out(21), B_internal(7) );
+	PB8: pulse_ander PORT MAP( B_internal(7), Dummy_in(7), Dummy_out(22), B_internal(8) );
+	PB9: pulse_ander PORT MAP( B_internal(8), Dummy_in(8), Dummy_out(23), B_internal(9) );
+	PB10: pulse_ander PORT MAP( B_internal(9), Dummy_in(9), Dummy_out(24), B_internal(10) );
+	PB11: pulse_ander PORT MAP( B_internal(10), Dummy_in(10), Dummy_out(25), B_internal(11) );
+	PB12: pulse_ander PORT MAP( B_internal(11), Dummy_in(11), Dummy_out(26), B_internal(12) );
+	PB13: pulse_ander PORT MAP( B_internal(12), Dummy_in(12), Dummy_out(27), B_internal(13) );
+	
+	PC0: pulse_ander PORT MAP( C, KEY(0), Dummy_out(28), C_internal(0) );
+	PC1: pulse_ander PORT MAP( C_internal(0), Dummy_in(0), Dummy_out(29), C_internal(1) );
+	PC2: pulse_ander PORT MAP( C_internal(1), Dummy_in(1), Dummy_out(30), C_internal(2) );
+	PC3: pulse_ander PORT MAP( C_internal(2), Dummy_in(2), Dummy_out(31), C_internal(3) );
+	PC4: pulse_ander PORT MAP( C_internal(3), Dummy_in(3), Dummy_out(32), C_internal(4) );
+	PC5: pulse_ander PORT MAP( C_internal(4), Dummy_in(4), Dummy_out(33), C_internal(5) );
+	PC6: pulse_ander PORT MAP( C_internal(5), Dummy_in(5), Dummy_out(34), C_internal(6) );
+	PC7: pulse_ander PORT MAP( C_internal(6), Dummy_in(6), Dummy_out(35), C_internal(7) );
+	PC8: pulse_ander PORT MAP( C_internal(7), Dummy_in(7), Dummy_out(36), C_internal(8) );
+	PC9: pulse_ander PORT MAP( C_internal(8), Dummy_in(8), Dummy_out(37), C_internal(9) );
+	PC10: pulse_ander PORT MAP( C_internal(9), Dummy_in(9), Dummy_out(38), C_internal(10) );
+	PC11: pulse_ander PORT MAP( C_internal(10), Dummy_in(10), Dummy_out(39), C_internal(11) );
+	PC12: pulse_ander PORT MAP( C_internal(11), Dummy_in(11), Dummy_out(40), C_internal(12) );
+	PC13: pulse_ander PORT MAP( C_internal(12), Dummy_in(12), Dummy_out(41), C_internal(13) );
+	
+	PD0: pulse_ander PORT MAP( D, KEY(0), Dummy_out(42), D_internal(0) );
+	PD1: pulse_ander PORT MAP( D_internal(0), Dummy_in(0), Dummy_out(43), D_internal(1) );
+	PD2: pulse_ander PORT MAP( D_internal(1), Dummy_in(1), Dummy_out(44), D_internal(2) );
+	PD3: pulse_ander PORT MAP( D_internal(2), Dummy_in(2), Dummy_out(45), D_internal(3) );
+	PD4: pulse_ander PORT MAP( D_internal(3), Dummy_in(3), Dummy_out(46), D_internal(4) );
+	PD5: pulse_ander PORT MAP( D_internal(4), Dummy_in(4), Dummy_out(47), D_internal(5) );
+	PD6: pulse_ander PORT MAP( D_internal(5), Dummy_in(5), Dummy_out(48), D_internal(6) );
+	PD7: pulse_ander PORT MAP( D_internal(6), Dummy_in(6), Dummy_out(49), D_internal(7) );
+	PD8: pulse_ander PORT MAP( D_internal(7), Dummy_in(7), Dummy_out(50), D_internal(8) );
+	PD9: pulse_ander PORT MAP( D_internal(8), Dummy_in(8), Dummy_out(51), D_internal(9) );
+	PD10: pulse_ander PORT MAP( D_internal(9), Dummy_in(9), Dummy_out(52), D_internal(10) );
+	PD11: pulse_ander PORT MAP( D_internal(10), Dummy_in(10), Dummy_out(53), D_internal(11) );
+	PD12: pulse_ander PORT MAP( D_internal(11), Dummy_in(11), Dummy_out(54), D_internal(12) );
+	PD13: pulse_ander PORT MAP( D_internal(12), Dummy_in(12), Dummy_out(55), D_internal(13) );
+	
+	MA: mux4to1 PORT MAP( A_internal(6), A_internal(9), A_internal(13), A, SW(17 DOWNTO 16), A_s );
+	MB: mux4to1 PORT MAP( B_internal(6), B_internal(9), B_internal(13), B, SW(17 DOWNTO 16), B_s );
+	MC: mux4to1 PORT MAP( C_internal(6), C_internal(9), C_internal(13), C, SW(17 DOWNTO 16), C_s );
+	MD: mux4to1 PORT MAP( D_internal(6), D_internal(9), D_internal(13), D, SW(17 DOWNTO 16), D_s );
+	
+-- This COMPONENT tests for overlap of the four input signals using a four input AND gate
+-- Each switch (represented by SW) can by turned off to ignore one particular signal
+-- This allows four different coincidence counters to be output to the computer
+-- The switches are mapped A_s:SW(0,4,8,12), B_s:SW(1,5,9,13), C_s:SW(2,6,10,14), D_s:SW(3,7,11,15)
+	CP0: coincidence_pulse PORT MAP( A_s, B_s, C_s, D_s, SW(0), SW(1), SW(2), SW(3), Coincidence_0 );
+	CP1: coincidence_pulse PORT MAP( A_s, B_s, C_s, D_s, SW(4), SW(5), SW(6), SW(7), Coincidence_1 );
+	CP2: coincidence_pulse PORT MAP( A_s, B_s, C_s, D_s, SW(8), SW(9), SW(10), SW(11), Coincidence_2 );
+	CP3: coincidence_pulse PORT MAP( A_s, B_s, C_s, D_s, SW(12), SW(13), SW(14), SW(15), Coincidence_3 );
+
+-- Once the output of the 14 bit counter reaches 1920, this process turns on the SIGNAL 'data_trigger'
+-- The SIGNAL 'data_trigger' then acts as a clock pulse, reseting the counts and changing the display
+	PROCESS ( data_trigger_count )
+		BEGIN
+		IF data_trigger_count = "000011110000000" THEN
+			data_trigger_reset <= '1';
+			data_trigger <= '1';
+		ELSIF data_trigger_count = "000000000000000" THEN
+			data_trigger_reset <= '0';
+			data_trigger <= '1';
+		ELSIF data_trigger_count = "000000000000001" THEN
+			data_trigger_reset <= '0';
+			data_trigger <= '1';
+		ELSE
+			data_trigger_reset <= '0';
+			data_trigger <= '0';
+		END IF;
+	END PROCESS;
+	
+-- Once the output of the 13 bit counter reaches 2,604, this process turns on the SIGNAL 'baud_rate_clk'
+-- The SIGNAL 'baud_rate_clk' then acts as a clock pulse, send the data out at the specified baud rate
+	PROCESS ( baud_rate_count )
+		BEGIN
+		IF baud_rate_count = "0101000101100" THEN
+			baud_rate_clk <= '1';
+		ELSE
+			baud_rate_clk <= '0';
+		END IF;
+	END PROCESS;
+	
+-- Uses the 14 bit counter and ~9,600 baud rate clock to count to 1/10th of a second to trigger DataOut
+	C0: data_trigger_counter PORT MAP ( data_trigger_reset, baud_rate_clk, data_trigger_count );
+
+-- Uses the 13 bit counter and 50 MHz clock to count the baud rate
+	C1: baud_counter PORT MAP ( baud_rate_clk, Clock_50, baud_rate_count );
+
+-- Uses the 32 bit counter to count the detection of single photons and coincidence photons
+-- It outputs the data in 32-bit arrays and resets every 1/10th of a second
+	C4: counter PORT MAP ( data_trigger_reset, Coincidence_0, Count_top_0 );
+	C5: counter PORT MAP ( data_trigger_reset, Coincidence_1, Count_top_1 );
+	C6: counter PORT MAP ( data_trigger_reset, Coincidence_2, Count_top_2 );
+	C7: counter PORT MAP ( data_trigger_reset, Coincidence_3, Count_top_3 );
+	CA: counter PORT MAP ( data_trigger_reset, A_s, A_top );
+	CB: counter PORT MAP ( data_trigger_reset, B_s, B_top );
+	CC: counter PORT MAP ( data_trigger_reset, C_s, C_top );
+	CD: counter PORT MAP ( data_trigger_reset, D_s, D_top );
+	
+-- This process sets the single photon and coincidence photon count output arrays every 1/10th of a second
+	PROCESS( data_trigger_reset )
+	BEGIN
+		IF data_trigger_reset'EVENT AND data_trigger_reset = '1' THEN
+			A_out <= A_top;
+			B_out <= B_top;
+			C_out <= C_top;
+			D_out <= D_top;
+			Count_out_0 <= Count_top_0;
+			Count_out_1 <= Count_top_1;
+			Count_out_2 <= Count_top_2;
+			Count_out_3 <= Count_top_3;
+		END IF;
+	END PROCESS;
+	
+-- Sends the A, B, C, D and the Coincidence counts out on the RS-232 port
+	D0: DataOut PORT MAP( A_out, B_out, C_out, D_out, Count_out_0, Count_out_1, Count_out_2, Count_out_3, baud_rate_clk, data_trigger, UART_TXD);
+
+-- Turns on the corresponding red LED whenever one of the DE2 board switches is turned on
+	LEDR <= SW;
+	
+-- Grounding output pins to prevent noise
+	GPIO_1(10) <= '0';
+	GPIO_1(12) <= '0';
+	GPIO_1(14) <= '0';
+	GPIO_1(16) <= '0';
+	GPIO_1(18) <= '0';
+	GPIO_1(20) <= '0';
+	GPIO_1(22) <= '0';
+	GPIO_1(24) <= '0';
+	GPIO_1(26) <= '0';
+	GPIO_1(28) <= '0';
+	GPIO_1(30) <= '0';
+	GPIO_1(32) <= '0';
+	GPIO_1(34) <= '0';
+	
+-- Sending the original signals, shortened signals, coincidence signals and the 10 Hz clock (data_trigger)
+-- to debug circuit if necessary
+	GPIO_1(35) <= A;
+	GPIO_1(33) <= B;
+	GPIO_1(31) <= C;
+	GPIO_1(29) <= D;
+	GPIO_1(27) <= A_s;
+	GPIO_1(25) <= B_s;
+	GPIO_1(23) <= C_s;
+	GPIO_1(21) <= D_s;
+	GPIO_1(19) <= Coincidence_0;
+	GPIO_1(17) <= Coincidence_0;
+	GPIO_1(15) <= Coincidence_0;
+	GPIO_1(13) <= Coincidence_0;
+	GPIO_1(11)  <= data_trigger;
+	
+END Behavior;

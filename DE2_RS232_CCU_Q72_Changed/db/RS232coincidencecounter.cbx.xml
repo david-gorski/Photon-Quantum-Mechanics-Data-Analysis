@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="RS232coincidencecounter">
+		<CBX_INST_ENTRY INSTANCE_NAME="|RS232coincidencecounter|counter:C7|lpm_counter:lpm_counter_component" CBX_FILE_NAME="cntr_t8i.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|RS232coincidencecounter|counter:CC|lpm_counter:lpm_counter_component" CBX_FILE_NAME="cntr_t8i.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|RS232coincidencecounter|DataOut:D0|altsyncram:data_select_rtl_0" CBX_FILE_NAME="altsyncram_5m21.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|RS232coincidencecounter|baud_counter:C1|lpm_counter:lpm_counter_component" CBX_FILE_NAME="cntr_s8i.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|RS232coincidencecounter|counter:C4|lpm_counter:lpm_counter_component" CBX_FILE_NAME="cntr_t8i.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|RS232coincidencecounter|counter:C6|lpm_counter:lpm_counter_component" CBX_FILE_NAME="cntr_t8i.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|RS232coincidencecounter|counter:CB|lpm_counter:lpm_counter_component" CBX_FILE_NAME="cntr_t8i.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|RS232coincidencecounter|counter:CD|lpm_counter:lpm_counter_component" CBX_FILE_NAME="cntr_t8i.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|RS232coincidencecounter|data_trigger_counter:C0|lpm_counter:lpm_counter_component" CBX_FILE_NAME="cntr_u8i.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|RS232coincidencecounter|counter:C5|lpm_counter:lpm_counter_component" CBX_FILE_NAME="cntr_t8i.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|RS232coincidencecounter|counter:CA|lpm_counter:lpm_counter_component" CBX_FILE_NAME="cntr_t8i.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

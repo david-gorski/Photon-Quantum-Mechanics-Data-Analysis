@@ -1,0 +1,616 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 16.098 ns
+From           : DataOut:D0|UART_TXD
+To             : UART_TXD
+From Clock     : Clock_50
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case tpd
+Slack          : N/A
+Required Time  : None
+Actual Time    : 16.029 ns
+From           : Dummy_in[0]
+To             : GPIO_1[19]
+From Clock     : --
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Clock Setup: 'Clock_50'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 116.43 MHz ( period = 8.589 ns )
+From           : DataOut:D0|altsyncram:data_select_rtl_0|altsyncram_l801:auto_generated|ram_block1a0~porta_address_reg9
+To             : DataOut:D0|Output[23]
+From Clock     : Clock_50
+To Clock       : Clock_50
+Failed Paths   : 0
+
+Type           : Clock Setup: 'Dummy_in[5]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 130.79 MHz ( period = 7.646 ns )
+From           : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[0]
+To             : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : Dummy_in[5]
+To Clock       : Dummy_in[5]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'Dummy_in[7]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 132.75 MHz ( period = 7.533 ns )
+From           : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[0]
+To             : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : Dummy_in[7]
+To Clock       : Dummy_in[7]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'GPIO_0[10]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 133.00 MHz ( period = 7.519 ns )
+From           : counter:C4|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[0]
+To             : counter:C4|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : GPIO_0[10]
+To Clock       : GPIO_0[10]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'Dummy_in[0]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 141.30 MHz ( period = 7.077 ns )
+From           : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[0]
+To             : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : Dummy_in[0]
+To Clock       : Dummy_in[0]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'Dummy_in[1]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 142.43 MHz ( period = 7.021 ns )
+From           : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[0]
+To             : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : Dummy_in[1]
+To Clock       : Dummy_in[1]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'GPIO_0[12]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 144.49 MHz ( period = 6.921 ns )
+From           : counter:C4|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[0]
+To             : counter:C4|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : GPIO_0[12]
+To Clock       : GPIO_0[12]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'Dummy_in[2]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 145.67 MHz ( period = 6.865 ns )
+From           : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[0]
+To             : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : Dummy_in[2]
+To Clock       : Dummy_in[2]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'Dummy_in[6]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 146.01 MHz ( period = 6.849 ns )
+From           : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[0]
+To             : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : Dummy_in[6]
+To Clock       : Dummy_in[6]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'KEY[0]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 148.37 MHz ( period = 6.740 ns )
+From           : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[0]
+To             : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : KEY[0]
+To Clock       : KEY[0]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'Dummy_in[4]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 150.24 MHz ( period = 6.656 ns )
+From           : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[0]
+To             : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : Dummy_in[4]
+To Clock       : Dummy_in[4]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'Dummy_in[8]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 151.58 MHz ( period = 6.597 ns )
+From           : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[0]
+To             : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : Dummy_in[8]
+To Clock       : Dummy_in[8]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'GPIO_0[14]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 155.88 MHz ( period = 6.415 ns )
+From           : counter:C4|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[0]
+To             : counter:C4|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : GPIO_0[14]
+To Clock       : GPIO_0[14]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'Dummy_in[3]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 156.37 MHz ( period = 6.395 ns )
+From           : counter:C5|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[0]
+To             : counter:C5|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : Dummy_in[3]
+To Clock       : Dummy_in[3]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'GPIO_0[16]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 158.78 MHz ( period = 6.298 ns )
+From           : counter:C4|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[0]
+To             : counter:C4|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : GPIO_0[16]
+To Clock       : GPIO_0[16]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'SW[17]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 172.68 MHz ( period = 5.791 ns )
+From           : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[0]
+To             : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : SW[17]
+To Clock       : SW[17]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'Dummy_in[10]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 176.65 MHz ( period = 5.661 ns )
+From           : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[0]
+To             : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : Dummy_in[10]
+To Clock       : Dummy_in[10]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'Dummy_in[9]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 176.80 MHz ( period = 5.656 ns )
+From           : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[0]
+To             : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : Dummy_in[9]
+To Clock       : Dummy_in[9]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'Dummy_in[12]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 189.25 MHz ( period = 5.284 ns )
+From           : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[0]
+To             : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : Dummy_in[12]
+To Clock       : Dummy_in[12]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'Dummy_in[11]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 189.25 MHz ( period = 5.284 ns )
+From           : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[0]
+To             : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : Dummy_in[11]
+To Clock       : Dummy_in[11]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'SW[16]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 207.25 MHz ( period = 4.825 ns )
+From           : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[0]
+To             : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : SW[16]
+To Clock       : SW[16]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'SW[2]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 263.57 MHz ( period = 3.794 ns )
+From           : counter:C4|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[0]
+To             : counter:C4|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : SW[2]
+To Clock       : SW[2]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'SW[0]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 263.57 MHz ( period = 3.794 ns )
+From           : counter:C4|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[0]
+To             : counter:C4|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : SW[0]
+To Clock       : SW[0]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'SW[3]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 263.57 MHz ( period = 3.794 ns )
+From           : counter:C4|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[0]
+To             : counter:C4|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : SW[3]
+To Clock       : SW[3]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'SW[1]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 263.57 MHz ( period = 3.794 ns )
+From           : counter:C4|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[0]
+To             : counter:C4|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : SW[1]
+To Clock       : SW[1]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'SW[8]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 263.64 MHz ( period = 3.793 ns )
+From           : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[0]
+To             : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : SW[8]
+To Clock       : SW[8]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'SW[11]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 263.64 MHz ( period = 3.793 ns )
+From           : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[0]
+To             : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : SW[11]
+To Clock       : SW[11]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'SW[9]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 263.64 MHz ( period = 3.793 ns )
+From           : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[0]
+To             : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : SW[9]
+To Clock       : SW[9]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'SW[10]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 263.64 MHz ( period = 3.793 ns )
+From           : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[0]
+To             : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : SW[10]
+To Clock       : SW[10]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'SW[4]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 263.71 MHz ( period = 3.792 ns )
+From           : counter:C5|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[0]
+To             : counter:C5|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : SW[4]
+To Clock       : SW[4]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'SW[7]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 263.71 MHz ( period = 3.792 ns )
+From           : counter:C5|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[0]
+To             : counter:C5|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : SW[7]
+To Clock       : SW[7]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'SW[5]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 263.71 MHz ( period = 3.792 ns )
+From           : counter:C5|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[0]
+To             : counter:C5|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : SW[5]
+To Clock       : SW[5]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'SW[6]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 263.71 MHz ( period = 3.792 ns )
+From           : counter:C5|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[0]
+To             : counter:C5|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : SW[6]
+To Clock       : SW[6]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'SW[12]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 264.06 MHz ( period = 3.787 ns )
+From           : counter:C7|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[0]
+To             : counter:C7|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : SW[12]
+To Clock       : SW[12]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'SW[15]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 264.06 MHz ( period = 3.787 ns )
+From           : counter:C7|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[0]
+To             : counter:C7|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : SW[15]
+To Clock       : SW[15]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'SW[14]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 264.06 MHz ( period = 3.787 ns )
+From           : counter:C7|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[0]
+To             : counter:C7|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : SW[14]
+To Clock       : SW[14]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'SW[13]'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 264.06 MHz ( period = 3.787 ns )
+From           : counter:C7|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[0]
+To             : counter:C7|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : SW[13]
+To Clock       : SW[13]
+Failed Paths   : 0
+
+Type           : Clock Hold: 'Clock_50'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : data_trigger_counter:C0|lpm_counter:lpm_counter_component|cntr_d4i:auto_generated|safe_q[7]
+To             : DataOut:D0|altsyncram:data_select_rtl_0|altsyncram_l801:auto_generated|ram_block1a0~porta_address_reg0
+From Clock     : Clock_50
+To Clock       : Clock_50
+Failed Paths   : 549
+
+Type           : Clock Hold: 'Dummy_in[5]'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+To             : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : Dummy_in[5]
+To Clock       : Dummy_in[5]
+Failed Paths   : 3389
+
+Type           : Clock Hold: 'Dummy_in[7]'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+To             : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : Dummy_in[7]
+To Clock       : Dummy_in[7]
+Failed Paths   : 2318
+
+Type           : Clock Hold: 'GPIO_0[10]'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : counter:CA|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+To             : counter:CA|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : GPIO_0[10]
+To Clock       : GPIO_0[10]
+Failed Paths   : 2640
+
+Type           : Clock Hold: 'Dummy_in[0]'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+To             : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : Dummy_in[0]
+To Clock       : Dummy_in[0]
+Failed Paths   : 2854
+
+Type           : Clock Hold: 'Dummy_in[1]'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+To             : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : Dummy_in[1]
+To Clock       : Dummy_in[1]
+Failed Paths   : 2834
+
+Type           : Clock Hold: 'GPIO_0[12]'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : counter:C4|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+To             : counter:C4|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : GPIO_0[12]
+To Clock       : GPIO_0[12]
+Failed Paths   : 2500
+
+Type           : Clock Hold: 'Dummy_in[2]'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+To             : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : Dummy_in[2]
+To Clock       : Dummy_in[2]
+Failed Paths   : 2954
+
+Type           : Clock Hold: 'Dummy_in[6]'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+To             : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : Dummy_in[6]
+To Clock       : Dummy_in[6]
+Failed Paths   : 2133
+
+Type           : Clock Hold: 'KEY[0]'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+To             : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : KEY[0]
+To Clock       : KEY[0]
+Failed Paths   : 2756
+
+Type           : Clock Hold: 'Dummy_in[4]'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+To             : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : Dummy_in[4]
+To Clock       : Dummy_in[4]
+Failed Paths   : 2711
+
+Type           : Clock Hold: 'Dummy_in[8]'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+To             : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : Dummy_in[8]
+To Clock       : Dummy_in[8]
+Failed Paths   : 2116
+
+Type           : Clock Hold: 'GPIO_0[14]'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : counter:C4|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+To             : counter:C4|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : GPIO_0[14]
+To Clock       : GPIO_0[14]
+Failed Paths   : 2176
+
+Type           : Clock Hold: 'Dummy_in[3]'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : counter:C5|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+To             : counter:C5|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : Dummy_in[3]
+To Clock       : Dummy_in[3]
+Failed Paths   : 2216
+
+Type           : Clock Hold: 'GPIO_0[16]'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : counter:C4|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+To             : counter:C4|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : GPIO_0[16]
+To Clock       : GPIO_0[16]
+Failed Paths   : 2080
+
+Type           : Clock Hold: 'SW[17]'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+To             : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : SW[17]
+To Clock       : SW[17]
+Failed Paths   : 1113
+
+Type           : Clock Hold: 'Dummy_in[10]'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+To             : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : Dummy_in[10]
+To Clock       : Dummy_in[10]
+Failed Paths   : 923
+
+Type           : Clock Hold: 'Dummy_in[9]'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+To             : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : Dummy_in[9]
+To Clock       : Dummy_in[9]
+Failed Paths   : 923
+
+Type           : Clock Hold: 'Dummy_in[11]'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+To             : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : Dummy_in[11]
+To Clock       : Dummy_in[11]
+Failed Paths   : 443
+
+Type           : Clock Hold: 'Dummy_in[12]'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+To             : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : Dummy_in[12]
+To Clock       : Dummy_in[12]
+Failed Paths   : 443
+
+Type           : Clock Hold: 'SW[16]'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+To             : counter:C6|lpm_counter:lpm_counter_component|cntr_b4i:auto_generated|safe_q[31]
+From Clock     : SW[16]
+To Clock       : SW[16]
+Failed Paths   : 97
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 40168
+
+--------------------------------------------------------------------------------------
+

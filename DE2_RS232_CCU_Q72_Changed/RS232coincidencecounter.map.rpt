@@ -1,0 +1,1257 @@
+Analysis & Synthesis report for RS232coincidencecounter
+Fri Jun 22 16:23:27 2012
+Quartus II Version 10.0 Build 218 06/27/2010 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis IP Cores Summary
+ 10. General Register Statistics
+ 11. Registers Packed Into Inferred Megafunctions
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Source assignments for Top-level Entity: |RS232coincidencecounter
+ 14. Source assignments for DataOut:D0|altsyncram:data_select_rtl_0|altsyncram_5m21:auto_generated
+ 15. Parameter Settings for User Entity Instance: data_trigger_counter:C0|lpm_counter:lpm_counter_component
+ 16. Parameter Settings for User Entity Instance: baud_counter:C1|lpm_counter:lpm_counter_component
+ 17. Parameter Settings for User Entity Instance: counter:C4|lpm_counter:lpm_counter_component
+ 18. Parameter Settings for User Entity Instance: counter:C5|lpm_counter:lpm_counter_component
+ 19. Parameter Settings for User Entity Instance: counter:C6|lpm_counter:lpm_counter_component
+ 20. Parameter Settings for User Entity Instance: counter:C7|lpm_counter:lpm_counter_component
+ 21. Parameter Settings for User Entity Instance: counter:CA|lpm_counter:lpm_counter_component
+ 22. Parameter Settings for User Entity Instance: counter:CB|lpm_counter:lpm_counter_component
+ 23. Parameter Settings for User Entity Instance: counter:CC|lpm_counter:lpm_counter_component
+ 24. Parameter Settings for User Entity Instance: counter:CD|lpm_counter:lpm_counter_component
+ 25. Parameter Settings for Inferred Entity Instance: DataOut:D0|altsyncram:data_select_rtl_0
+ 26. altsyncram Parameter Settings by Entity Instance
+ 27. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++------------------------------------+------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri Jun 22 16:23:27 2012    ;
+; Quartus II Version                 ; 10.0 Build 218 06/27/2010 SJ Web Edition ;
+; Revision Name                      ; RS232coincidencecounter                  ;
+; Top-level Entity Name              ; RS232coincidencecounter                  ;
+; Family                             ; Cyclone IV E                             ;
+; Total logic elements               ; 987                                      ;
+;     Total combinational functions  ; 731                                      ;
+;     Dedicated logic registers      ; 579                                      ;
+; Total registers                    ; 579                                      ;
+; Total pins                         ; 49                                       ;
+; Total virtual pins                 ; 0                                        ;
+; Total memory bits                  ; 3,072                                    ;
+; Embedded Multiplier 9-bit elements ; 0                                        ;
+; Total PLLs                         ; 0                                        ;
++------------------------------------+------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                                  ;
++----------------------------------------------------------------------------+-------------------------+-------------------------+
+; Option                                                                     ; Setting                 ; Default Value           ;
++----------------------------------------------------------------------------+-------------------------+-------------------------+
+; Device                                                                     ; EP4CE115F29C7           ;                         ;
+; Top-level entity name                                                      ; RS232coincidencecounter ; RS232coincidencecounter ;
+; Family name                                                                ; Cyclone IV E            ; Stratix II              ;
+; Use smart compilation                                                      ; Off                     ; Off                     ;
+; Maximum processors allowed for parallel compilation                        ; 1                       ; 1                       ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                      ; On                      ;
+; Enable compact report table                                                ; Off                     ; Off                     ;
+; Restructure Multiplexers                                                   ; Auto                    ; Auto                    ;
+; Create Debugging Nodes for IP Cores                                        ; Off                     ; Off                     ;
+; Preserve fewer node names                                                  ; On                      ; On                      ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                     ; Off                     ;
+; Verilog Version                                                            ; Verilog_2001            ; Verilog_2001            ;
+; VHDL Version                                                               ; VHDL_1993               ; VHDL_1993               ;
+; State Machine Processing                                                   ; Auto                    ; Auto                    ;
+; Safe State Machine                                                         ; Off                     ; Off                     ;
+; Extract Verilog State Machines                                             ; On                      ; On                      ;
+; Extract VHDL State Machines                                                ; On                      ; On                      ;
+; Ignore Verilog initial constructs                                          ; Off                     ; Off                     ;
+; Iteration limit for constant Verilog loops                                 ; 5000                    ; 5000                    ;
+; Iteration limit for non-constant Verilog loops                             ; 250                     ; 250                     ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                      ; On                      ;
+; Parallel Synthesis                                                         ; On                      ; On                      ;
+; DSP Block Balancing                                                        ; Auto                    ; Auto                    ;
+; NOT Gate Push-Back                                                         ; On                      ; On                      ;
+; Power-Up Don't Care                                                        ; On                      ; On                      ;
+; Remove Redundant Logic Cells                                               ; Off                     ; Off                     ;
+; Remove Duplicate Registers                                                 ; On                      ; On                      ;
+; Ignore CARRY Buffers                                                       ; Off                     ; Off                     ;
+; Ignore CASCADE Buffers                                                     ; Off                     ; Off                     ;
+; Ignore GLOBAL Buffers                                                      ; Off                     ; Off                     ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                     ; Off                     ;
+; Ignore LCELL Buffers                                                       ; Off                     ; Off                     ;
+; Ignore SOFT Buffers                                                        ; On                      ; On                      ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                     ; Off                     ;
+; Optimization Technique                                                     ; Balanced                ; Balanced                ;
+; Carry Chain Length                                                         ; 70                      ; 70                      ;
+; Auto Carry Chains                                                          ; On                      ; On                      ;
+; Auto Open-Drain Pins                                                       ; On                      ; On                      ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                     ; Off                     ;
+; Auto ROM Replacement                                                       ; On                      ; On                      ;
+; Auto RAM Replacement                                                       ; On                      ; On                      ;
+; Auto DSP Block Replacement                                                 ; On                      ; On                      ;
+; Auto Shift Register Replacement                                            ; Auto                    ; Auto                    ;
+; Auto Clock Enable Replacement                                              ; On                      ; On                      ;
+; Strict RAM Replacement                                                     ; Off                     ; Off                     ;
+; Allow Synchronous Control Signals                                          ; On                      ; On                      ;
+; Force Use of Synchronous Clear Signals                                     ; Off                     ; Off                     ;
+; Auto RAM Block Balancing                                                   ; On                      ; On                      ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                     ; Off                     ;
+; Auto Resource Sharing                                                      ; Off                     ; Off                     ;
+; Allow Any RAM Size For Recognition                                         ; Off                     ; Off                     ;
+; Allow Any ROM Size For Recognition                                         ; Off                     ; Off                     ;
+; Allow Any Shift Register Size For Recognition                              ; Off                     ; Off                     ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                      ; On                      ;
+; Ignore translate_off and synthesis_off directives                          ; Off                     ; Off                     ;
+; Timing-Driven Synthesis                                                    ; On                      ; On                      ;
+; Report Parameter Settings                                                  ; On                      ; On                      ;
+; Report Source Assignments                                                  ; On                      ; On                      ;
+; Report Connectivity Checks                                                 ; On                      ; On                      ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                     ; Off                     ;
+; Synchronization Register Chain Length                                      ; 2                       ; 2                       ;
+; PowerPlay Power Optimization                                               ; Normal compilation      ; Normal compilation      ;
+; HDL message level                                                          ; Level2                  ; Level2                  ;
+; Suppress Register Optimization Related Messages                            ; Off                     ; Off                     ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 100                     ; 100                     ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                     ; 100                     ;
+; Clock MUX Protection                                                       ; On                      ; On                      ;
+; Auto Gated Clock Conversion                                                ; Off                     ; Off                     ;
+; Block Design Naming                                                        ; Auto                    ; Auto                    ;
+; SDC constraint protection                                                  ; Off                     ; Off                     ;
+; Synthesis Effort                                                           ; Auto                    ; Auto                    ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                      ; On                      ;
+; Analysis & Synthesis Message Level                                         ; Medium                  ; Medium                  ;
+; Disable Register Merging Across Hierarchies                                ; Auto                    ; Auto                    ;
+; Resource Aware Inference For Block RAM                                     ; On                      ; On                      ;
+; Synthesis Seed                                                             ; 1                       ; 1                       ;
++----------------------------------------------------------------------------+-------------------------+-------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                             ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                   ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------+
+; data_trigger_counter.vhd         ; yes             ; User Wizard-Generated File   ; C:/QIE/CCM 2012/DE2_RS232_CCU_Q72/data_trigger_counter.vhd     ;
+; baud_counter.vhd                 ; yes             ; User Wizard-Generated File   ; C:/QIE/CCM 2012/DE2_RS232_CCU_Q72/baud_counter.vhd             ;
+; counter.vhd                      ; yes             ; User Wizard-Generated File   ; C:/QIE/CCM 2012/DE2_RS232_CCU_Q72/counter.vhd                  ;
+; RS232coincidencecounter.vhd      ; yes             ; User VHDL File               ; C:/QIE/CCM 2012/DE2_RS232_CCU_Q72/RS232coincidencecounter.vhd  ;
+; mux4to1.vhd                      ; yes             ; User VHDL File               ; C:/QIE/CCM 2012/DE2_RS232_CCU_Q72/mux4to1.vhd                  ;
+; DataOut.vhd                      ; yes             ; User VHDL File               ; C:/QIE/CCM 2012/DE2_RS232_CCU_Q72/DataOut.vhd                  ;
+; coincidence_pulse.vhd            ; yes             ; User VHDL File               ; C:/QIE/CCM 2012/DE2_RS232_CCU_Q72/coincidence_pulse.vhd        ;
+; lpm_counter.tdf                  ; yes             ; Megafunction                 ; c:/altera/10.0/quartus/libraries/megafunctions/lpm_counter.tdf ;
+; db/cntr_u8i.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/QIE/CCM 2012/DE2_RS232_CCU_Q72/db/cntr_u8i.tdf              ;
+; db/cntr_s8i.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/QIE/CCM 2012/DE2_RS232_CCU_Q72/db/cntr_s8i.tdf              ;
+; db/cntr_t8i.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/QIE/CCM 2012/DE2_RS232_CCU_Q72/db/cntr_t8i.tdf              ;
+; altsyncram.tdf                   ; yes             ; Megafunction                 ; c:/altera/10.0/quartus/libraries/megafunctions/altsyncram.tdf  ;
+; db/altsyncram_5m21.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/QIE/CCM 2012/DE2_RS232_CCU_Q72/db/altsyncram_5m21.tdf       ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary          ;
++---------------------------------------------+--------+
+; Resource                                    ; Usage  ;
++---------------------------------------------+--------+
+; Estimated Total logic elements              ; 987    ;
+;                                             ;        ;
+; Total combinational functions               ; 731    ;
+; Logic element usage by number of LUT inputs ;        ;
+;     -- 4 input functions                    ; 193    ;
+;     -- 3 input functions                    ; 29     ;
+;     -- <=2 input functions                  ; 509    ;
+;                                             ;        ;
+; Logic elements by mode                      ;        ;
+;     -- normal mode                          ; 457    ;
+;     -- arithmetic mode                      ; 274    ;
+;                                             ;        ;
+; Total registers                             ; 579    ;
+;     -- Dedicated logic registers            ; 579    ;
+;     -- I/O registers                        ; 0      ;
+;                                             ;        ;
+; I/O pins                                    ; 49     ;
+; Total memory bits                           ; 3072   ;
+; Maximum fan-out node                        ; Equal0 ;
+; Maximum fan-out                             ; 530    ;
+; Total fan-out                               ; 3288   ;
+; Average fan-out                             ; 2.33   ;
++---------------------------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                            ;
++-------------------------------------------+-------------------+--------------+-------------+------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                        ; Library Name ;
++-------------------------------------------+-------------------+--------------+-------------+------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------+--------------+
+; |RS232coincidencecounter                  ; 731 (212)         ; 579 (256)    ; 3072        ; 0          ; 0            ; 0       ; 0         ; 49   ; 0            ; |RS232coincidencecounter                                                                                   ;              ;
+;    |DataOut:D0|                           ; 199 (199)         ; 39 (39)      ; 3072        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |RS232coincidencecounter|DataOut:D0                                                                        ;              ;
+;       |altsyncram:data_select_rtl_0|      ; 0 (0)             ; 0 (0)        ; 3072        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |RS232coincidencecounter|DataOut:D0|altsyncram:data_select_rtl_0                                           ;              ;
+;          |altsyncram_5m21:auto_generated| ; 0 (0)             ; 0 (0)        ; 3072        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |RS232coincidencecounter|DataOut:D0|altsyncram:data_select_rtl_0|altsyncram_5m21:auto_generated            ;              ;
+;    |baud_counter:C1|                      ; 13 (0)            ; 13 (0)       ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |RS232coincidencecounter|baud_counter:C1                                                                   ;              ;
+;       |lpm_counter:lpm_counter_component| ; 13 (0)            ; 13 (0)       ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |RS232coincidencecounter|baud_counter:C1|lpm_counter:lpm_counter_component                                 ;              ;
+;          |cntr_s8i:auto_generated|        ; 13 (13)           ; 13 (13)      ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |RS232coincidencecounter|baud_counter:C1|lpm_counter:lpm_counter_component|cntr_s8i:auto_generated         ;              ;
+;    |coincidence_pulse:CP0|                ; 3 (3)             ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |RS232coincidencecounter|coincidence_pulse:CP0                                                             ;              ;
+;    |coincidence_pulse:CP1|                ; 3 (3)             ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |RS232coincidencecounter|coincidence_pulse:CP1                                                             ;              ;
+;    |coincidence_pulse:CP2|                ; 3 (3)             ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |RS232coincidencecounter|coincidence_pulse:CP2                                                             ;              ;
+;    |coincidence_pulse:CP3|                ; 3 (3)             ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |RS232coincidencecounter|coincidence_pulse:CP3                                                             ;              ;
+;    |counter:C4|                           ; 32 (0)            ; 32 (0)       ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |RS232coincidencecounter|counter:C4                                                                        ;              ;
+;       |lpm_counter:lpm_counter_component| ; 32 (0)            ; 32 (0)       ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |RS232coincidencecounter|counter:C4|lpm_counter:lpm_counter_component                                      ;              ;
+;          |cntr_t8i:auto_generated|        ; 32 (32)           ; 32 (32)      ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |RS232coincidencecounter|counter:C4|lpm_counter:lpm_counter_component|cntr_t8i:auto_generated              ;              ;
+;    |counter:C5|                           ; 32 (0)            ; 32 (0)       ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |RS232coincidencecounter|counter:C5                                                                        ;              ;
+;       |lpm_counter:lpm_counter_component| ; 32 (0)            ; 32 (0)       ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |RS232coincidencecounter|counter:C5|lpm_counter:lpm_counter_component                                      ;              ;
+;          |cntr_t8i:auto_generated|        ; 32 (32)           ; 32 (32)      ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |RS232coincidencecounter|counter:C5|lpm_counter:lpm_counter_component|cntr_t8i:auto_generated              ;              ;
+;    |counter:C6|                           ; 32 (0)            ; 32 (0)       ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |RS232coincidencecounter|counter:C6                                                                        ;              ;
+;       |lpm_counter:lpm_counter_component| ; 32 (0)            ; 32 (0)       ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |RS232coincidencecounter|counter:C6|lpm_counter:lpm_counter_component                                      ;              ;
+;          |cntr_t8i:auto_generated|        ; 32 (32)           ; 32 (32)      ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |RS232coincidencecounter|counter:C6|lpm_counter:lpm_counter_component|cntr_t8i:auto_generated              ;              ;
+;    |counter:C7|                           ; 32 (0)            ; 32 (0)       ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |RS232coincidencecounter|counter:C7                                                                        ;              ;
+;       |lpm_counter:lpm_counter_component| ; 32 (0)            ; 32 (0)       ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |RS232coincidencecounter|counter:C7|lpm_counter:lpm_counter_component                                      ;              ;
+;          |cntr_t8i:auto_generated|        ; 32 (32)           ; 32 (32)      ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |RS232coincidencecounter|counter:C7|lpm_counter:lpm_counter_component|cntr_t8i:auto_generated              ;              ;
+;    |counter:CA|                           ; 32 (0)            ; 32 (0)       ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |RS232coincidencecounter|counter:CA                                                                        ;              ;
+;       |lpm_counter:lpm_counter_component| ; 32 (0)            ; 32 (0)       ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |RS232coincidencecounter|counter:CA|lpm_counter:lpm_counter_component                                      ;              ;
+;          |cntr_t8i:auto_generated|        ; 32 (32)           ; 32 (32)      ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |RS232coincidencecounter|counter:CA|lpm_counter:lpm_counter_component|cntr_t8i:auto_generated              ;              ;
+;    |counter:CB|                           ; 32 (0)            ; 32 (0)       ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |RS232coincidencecounter|counter:CB                                                                        ;              ;
+;       |lpm_counter:lpm_counter_component| ; 32 (0)            ; 32 (0)       ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |RS232coincidencecounter|counter:CB|lpm_counter:lpm_counter_component                                      ;              ;
+;          |cntr_t8i:auto_generated|        ; 32 (32)           ; 32 (32)      ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |RS232coincidencecounter|counter:CB|lpm_counter:lpm_counter_component|cntr_t8i:auto_generated              ;              ;
+;    |counter:CC|                           ; 32 (0)            ; 32 (0)       ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |RS232coincidencecounter|counter:CC                                                                        ;              ;
+;       |lpm_counter:lpm_counter_component| ; 32 (0)            ; 32 (0)       ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |RS232coincidencecounter|counter:CC|lpm_counter:lpm_counter_component                                      ;              ;
+;          |cntr_t8i:auto_generated|        ; 32 (32)           ; 32 (32)      ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |RS232coincidencecounter|counter:CC|lpm_counter:lpm_counter_component|cntr_t8i:auto_generated              ;              ;
+;    |counter:CD|                           ; 32 (0)            ; 32 (0)       ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |RS232coincidencecounter|counter:CD                                                                        ;              ;
+;       |lpm_counter:lpm_counter_component| ; 32 (0)            ; 32 (0)       ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |RS232coincidencecounter|counter:CD|lpm_counter:lpm_counter_component                                      ;              ;
+;          |cntr_t8i:auto_generated|        ; 32 (32)           ; 32 (32)      ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |RS232coincidencecounter|counter:CD|lpm_counter:lpm_counter_component|cntr_t8i:auto_generated              ;              ;
+;    |data_trigger_counter:C0|              ; 15 (0)            ; 15 (0)       ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |RS232coincidencecounter|data_trigger_counter:C0                                                           ;              ;
+;       |lpm_counter:lpm_counter_component| ; 15 (0)            ; 15 (0)       ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |RS232coincidencecounter|data_trigger_counter:C0|lpm_counter:lpm_counter_component                         ;              ;
+;          |cntr_u8i:auto_generated|        ; 15 (15)           ; 15 (15)      ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |RS232coincidencecounter|data_trigger_counter:C0|lpm_counter:lpm_counter_component|cntr_u8i:auto_generated ;              ;
+;    |mux4to1:MA|                           ; 6 (6)             ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |RS232coincidencecounter|mux4to1:MA                                                                        ;              ;
+;    |mux4to1:MB|                           ; 6 (6)             ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |RS232coincidencecounter|mux4to1:MB                                                                        ;              ;
+;    |mux4to1:MC|                           ; 6 (6)             ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |RS232coincidencecounter|mux4to1:MC                                                                        ;              ;
+;    |mux4to1:MD|                           ; 6 (6)             ; 0 (0)        ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; |RS232coincidencecounter|mux4to1:MD                                                                        ;              ;
++-------------------------------------------+-------------------+--------------+-------------+------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                              ;
++-----------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+----------------------------------------------------------+
+; Name                                                                              ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF                                                      ;
++-----------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+----------------------------------------------------------+
+; DataOut:D0|altsyncram:data_select_rtl_0|altsyncram_5m21:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 1024         ; 3            ; --           ; --           ; 3072 ; RS232coincidencecounter.RS232coincidencecounter0.rtl.mif ;
++-----------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+----------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                                         ;
++--------+--------------+---------+--------------+--------------+--------------------------------------------------+------------------------------------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                  ; IP Include File                                            ;
++--------+--------------+---------+--------------+--------------+--------------------------------------------------+------------------------------------------------------------+
+; Altera ; LPM_COUNTER  ; N/A     ; N/A          ; N/A          ; |RS232coincidencecounter|baud_counter:C1         ; C:/QIE/CCM 2012/DE2_RS232_CCU_Q72/baud_counter.vhd         ;
+; Altera ; LPM_COUNTER  ; N/A     ; N/A          ; N/A          ; |RS232coincidencecounter|counter:C4              ; C:/QIE/CCM 2012/DE2_RS232_CCU_Q72/counter.vhd              ;
+; Altera ; LPM_COUNTER  ; N/A     ; N/A          ; N/A          ; |RS232coincidencecounter|counter:C5              ; C:/QIE/CCM 2012/DE2_RS232_CCU_Q72/counter.vhd              ;
+; Altera ; LPM_COUNTER  ; N/A     ; N/A          ; N/A          ; |RS232coincidencecounter|counter:C6              ; C:/QIE/CCM 2012/DE2_RS232_CCU_Q72/counter.vhd              ;
+; Altera ; LPM_COUNTER  ; N/A     ; N/A          ; N/A          ; |RS232coincidencecounter|counter:C7              ; C:/QIE/CCM 2012/DE2_RS232_CCU_Q72/counter.vhd              ;
+; Altera ; LPM_COUNTER  ; N/A     ; N/A          ; N/A          ; |RS232coincidencecounter|counter:CA              ; C:/QIE/CCM 2012/DE2_RS232_CCU_Q72/counter.vhd              ;
+; Altera ; LPM_COUNTER  ; N/A     ; N/A          ; N/A          ; |RS232coincidencecounter|counter:CB              ; C:/QIE/CCM 2012/DE2_RS232_CCU_Q72/counter.vhd              ;
+; Altera ; LPM_COUNTER  ; N/A     ; N/A          ; N/A          ; |RS232coincidencecounter|counter:CC              ; C:/QIE/CCM 2012/DE2_RS232_CCU_Q72/counter.vhd              ;
+; Altera ; LPM_COUNTER  ; N/A     ; N/A          ; N/A          ; |RS232coincidencecounter|counter:CD              ; C:/QIE/CCM 2012/DE2_RS232_CCU_Q72/counter.vhd              ;
+; Altera ; LPM_COUNTER  ; N/A     ; N/A          ; N/A          ; |RS232coincidencecounter|data_trigger_counter:C0 ; C:/QIE/CCM 2012/DE2_RS232_CCU_Q72/data_trigger_counter.vhd ;
++--------+--------------+---------+--------------+--------------+--------------------------------------------------+------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 579   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 32    ;
+; Number of registers using Asynchronous Clear ; 284   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 32    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                ;
++---------------------------+--------------------------+------+
+; Register Name             ; Megafunction             ; Type ;
++---------------------------+--------------------------+------+
+; DataOut:D0|data_select[1] ; DataOut:D0|data_select~0 ; ROM  ;
+; DataOut:D0|data_select[0] ; DataOut:D0|data_select~0 ; ROM  ;
+; DataOut:D0|data_select[2] ; DataOut:D0|data_select~0 ; ROM  ;
++---------------------------+--------------------------+------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+; 65:1               ; 2 bits    ; 86 LEs        ; 8 LEs                ; 78 LEs                 ; Yes        ; |RS232coincidencecounter|DataOut:D0|index[0]   ;
+; 42:1               ; 32 bits   ; 896 LEs       ; 160 LEs              ; 736 LEs                ; Yes        ; |RS232coincidencecounter|DataOut:D0|Output[21] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |RS232coincidencecounter|mux4to1:MA|pulseout   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+
+
++-------------------------------------------------------------------+
+; Source assignments for Top-level Entity: |RS232coincidencecounter ;
++------------------------------+-------+------+---------------------+
+; Assignment                   ; Value ; From ; To                  ;
++------------------------------+-------+------+---------------------+
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; A_internal[0]       ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; A_internal[0]       ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; A_internal[1]       ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; A_internal[1]       ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; A_internal[2]       ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; A_internal[2]       ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; A_internal[3]       ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; A_internal[3]       ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; A_internal[4]       ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; A_internal[4]       ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; A_internal[5]       ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; A_internal[5]       ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; A_internal[6]       ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; A_internal[6]       ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; A_internal[7]       ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; A_internal[7]       ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; A_internal[8]       ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; A_internal[8]       ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; A_internal[9]       ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; A_internal[9]       ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; A_internal[10]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; A_internal[10]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; A_internal[11]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; A_internal[11]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; A_internal[12]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; A_internal[12]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; A_internal[13]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; A_internal[13]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; A_internal[14]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; A_internal[14]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; A_internal[15]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; A_internal[15]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; A_internal[16]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; A_internal[16]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; A_internal[17]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; A_internal[17]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; A_internal[18]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; A_internal[18]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; A_internal[19]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; A_internal[19]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; A_internal[20]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; A_internal[20]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; A_internal[21]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; A_internal[21]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; A_internal[22]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; A_internal[22]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; A_internal[23]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; A_internal[23]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; A_internal[24]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; A_internal[24]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; B_internal[0]       ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; B_internal[0]       ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; B_internal[1]       ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; B_internal[1]       ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; B_internal[2]       ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; B_internal[2]       ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; B_internal[3]       ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; B_internal[3]       ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; B_internal[4]       ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; B_internal[4]       ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; B_internal[5]       ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; B_internal[5]       ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; B_internal[6]       ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; B_internal[6]       ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; B_internal[7]       ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; B_internal[7]       ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; B_internal[8]       ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; B_internal[8]       ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; B_internal[9]       ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; B_internal[9]       ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; B_internal[10]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; B_internal[10]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; B_internal[11]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; B_internal[11]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; B_internal[12]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; B_internal[12]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; B_internal[13]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; B_internal[13]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; B_internal[14]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; B_internal[14]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; B_internal[15]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; B_internal[15]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; B_internal[16]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; B_internal[16]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; B_internal[17]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; B_internal[17]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; B_internal[18]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; B_internal[18]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; B_internal[19]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; B_internal[19]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; B_internal[20]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; B_internal[20]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; B_internal[21]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; B_internal[21]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; B_internal[22]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; B_internal[22]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; B_internal[23]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; B_internal[23]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; B_internal[24]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; B_internal[24]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; C_internal[0]       ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; C_internal[0]       ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; C_internal[1]       ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; C_internal[1]       ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; C_internal[2]       ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; C_internal[2]       ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; C_internal[3]       ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; C_internal[3]       ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; C_internal[4]       ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; C_internal[4]       ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; C_internal[5]       ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; C_internal[5]       ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; C_internal[6]       ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; C_internal[6]       ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; C_internal[7]       ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; C_internal[7]       ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; C_internal[8]       ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; C_internal[8]       ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; C_internal[9]       ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; C_internal[9]       ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; C_internal[10]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; C_internal[10]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; C_internal[11]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; C_internal[11]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; C_internal[12]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; C_internal[12]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; C_internal[13]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; C_internal[13]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; C_internal[14]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; C_internal[14]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; C_internal[15]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; C_internal[15]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; C_internal[16]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; C_internal[16]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; C_internal[17]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; C_internal[17]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; C_internal[18]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; C_internal[18]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; C_internal[19]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; C_internal[19]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; C_internal[20]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; C_internal[20]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; C_internal[21]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; C_internal[21]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; C_internal[22]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; C_internal[22]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; C_internal[23]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; C_internal[23]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; C_internal[24]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; C_internal[24]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; D_internal[0]       ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; D_internal[0]       ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; D_internal[1]       ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; D_internal[1]       ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; D_internal[2]       ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; D_internal[2]       ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; D_internal[3]       ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; D_internal[3]       ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; D_internal[4]       ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; D_internal[4]       ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; D_internal[5]       ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; D_internal[5]       ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; D_internal[6]       ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; D_internal[6]       ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; D_internal[7]       ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; D_internal[7]       ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; D_internal[8]       ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; D_internal[8]       ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; D_internal[9]       ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; D_internal[9]       ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; D_internal[10]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; D_internal[10]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; D_internal[11]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; D_internal[11]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; D_internal[12]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; D_internal[12]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; D_internal[13]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; D_internal[13]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; D_internal[14]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; D_internal[14]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; D_internal[15]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; D_internal[15]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; D_internal[16]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; D_internal[16]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; D_internal[17]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; D_internal[17]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; D_internal[18]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; D_internal[18]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; D_internal[19]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; D_internal[19]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; D_internal[20]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; D_internal[20]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; D_internal[21]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; D_internal[21]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; D_internal[22]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; D_internal[22]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; D_internal[23]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; D_internal[23]      ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; D_internal[24]      ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; D_internal[24]      ;
++------------------------------+-------+------+---------------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Source assignments for DataOut:D0|altsyncram:data_select_rtl_0|altsyncram_5m21:auto_generated ;
++---------------------------------+--------------------+------+---------------------------------+
+; Assignment                      ; Value              ; From ; To                              ;
++---------------------------------+--------------------+------+---------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                               ;
++---------------------------------+--------------------+------+---------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_trigger_counter:C0|lpm_counter:lpm_counter_component ;
++------------------------+--------------+----------------------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                                           ;
++------------------------+--------------+----------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                                     ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                                   ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                                   ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                                 ;
+; LPM_WIDTH              ; 15           ; Signed Integer                                                 ;
+; LPM_DIRECTION          ; UP           ; Untyped                                                        ;
+; LPM_MODULUS            ; 0            ; Untyped                                                        ;
+; LPM_AVALUE             ; UNUSED       ; Untyped                                                        ;
+; LPM_SVALUE             ; UNUSED       ; Untyped                                                        ;
+; LPM_PORT_UPDOWN        ; PORT_UNUSED  ; Untyped                                                        ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                                        ;
+; CARRY_CHAIN            ; MANUAL       ; Untyped                                                        ;
+; CARRY_CHAIN_LENGTH     ; 48           ; CARRY_CHAIN_LENGTH                                             ;
+; NOT_GATE_PUSH_BACK     ; ON           ; NOT_GATE_PUSH_BACK                                             ;
+; CARRY_CNT_EN           ; SMART        ; Untyped                                                        ;
+; LABWIDE_SCLR           ; ON           ; Untyped                                                        ;
+; USE_NEW_VERSION        ; TRUE         ; Untyped                                                        ;
+; CBXI_PARAMETER         ; cntr_u8i     ; Untyped                                                        ;
++------------------------+--------------+----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: baud_counter:C1|lpm_counter:lpm_counter_component ;
++------------------------+--------------+--------------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                                   ;
++------------------------+--------------+--------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                             ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                           ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                           ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                         ;
+; LPM_WIDTH              ; 13           ; Signed Integer                                         ;
+; LPM_DIRECTION          ; UP           ; Untyped                                                ;
+; LPM_MODULUS            ; 0            ; Untyped                                                ;
+; LPM_AVALUE             ; UNUSED       ; Untyped                                                ;
+; LPM_SVALUE             ; UNUSED       ; Untyped                                                ;
+; LPM_PORT_UPDOWN        ; PORT_UNUSED  ; Untyped                                                ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                                ;
+; CARRY_CHAIN            ; MANUAL       ; Untyped                                                ;
+; CARRY_CHAIN_LENGTH     ; 48           ; CARRY_CHAIN_LENGTH                                     ;
+; NOT_GATE_PUSH_BACK     ; ON           ; NOT_GATE_PUSH_BACK                                     ;
+; CARRY_CNT_EN           ; SMART        ; Untyped                                                ;
+; LABWIDE_SCLR           ; ON           ; Untyped                                                ;
+; USE_NEW_VERSION        ; TRUE         ; Untyped                                                ;
+; CBXI_PARAMETER         ; cntr_s8i     ; Untyped                                                ;
++------------------------+--------------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: counter:C4|lpm_counter:lpm_counter_component ;
++------------------------+--------------+---------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                              ;
++------------------------+--------------+---------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                        ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                      ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                      ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                    ;
+; LPM_WIDTH              ; 32           ; Signed Integer                                    ;
+; LPM_DIRECTION          ; UP           ; Untyped                                           ;
+; LPM_MODULUS            ; 0            ; Untyped                                           ;
+; LPM_AVALUE             ; UNUSED       ; Untyped                                           ;
+; LPM_SVALUE             ; UNUSED       ; Untyped                                           ;
+; LPM_PORT_UPDOWN        ; PORT_UNUSED  ; Untyped                                           ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                           ;
+; CARRY_CHAIN            ; MANUAL       ; Untyped                                           ;
+; CARRY_CHAIN_LENGTH     ; 48           ; CARRY_CHAIN_LENGTH                                ;
+; NOT_GATE_PUSH_BACK     ; ON           ; NOT_GATE_PUSH_BACK                                ;
+; CARRY_CNT_EN           ; SMART        ; Untyped                                           ;
+; LABWIDE_SCLR           ; ON           ; Untyped                                           ;
+; USE_NEW_VERSION        ; TRUE         ; Untyped                                           ;
+; CBXI_PARAMETER         ; cntr_t8i     ; Untyped                                           ;
++------------------------+--------------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: counter:C5|lpm_counter:lpm_counter_component ;
++------------------------+--------------+---------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                              ;
++------------------------+--------------+---------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                        ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                      ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                      ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                    ;
+; LPM_WIDTH              ; 32           ; Signed Integer                                    ;
+; LPM_DIRECTION          ; UP           ; Untyped                                           ;
+; LPM_MODULUS            ; 0            ; Untyped                                           ;
+; LPM_AVALUE             ; UNUSED       ; Untyped                                           ;
+; LPM_SVALUE             ; UNUSED       ; Untyped                                           ;
+; LPM_PORT_UPDOWN        ; PORT_UNUSED  ; Untyped                                           ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                           ;
+; CARRY_CHAIN            ; MANUAL       ; Untyped                                           ;
+; CARRY_CHAIN_LENGTH     ; 48           ; CARRY_CHAIN_LENGTH                                ;
+; NOT_GATE_PUSH_BACK     ; ON           ; NOT_GATE_PUSH_BACK                                ;
+; CARRY_CNT_EN           ; SMART        ; Untyped                                           ;
+; LABWIDE_SCLR           ; ON           ; Untyped                                           ;
+; USE_NEW_VERSION        ; TRUE         ; Untyped                                           ;
+; CBXI_PARAMETER         ; cntr_t8i     ; Untyped                                           ;
++------------------------+--------------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: counter:C6|lpm_counter:lpm_counter_component ;
++------------------------+--------------+---------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                              ;
++------------------------+--------------+---------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                        ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                      ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                      ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                    ;
+; LPM_WIDTH              ; 32           ; Signed Integer                                    ;
+; LPM_DIRECTION          ; UP           ; Untyped                                           ;
+; LPM_MODULUS            ; 0            ; Untyped                                           ;
+; LPM_AVALUE             ; UNUSED       ; Untyped                                           ;
+; LPM_SVALUE             ; UNUSED       ; Untyped                                           ;
+; LPM_PORT_UPDOWN        ; PORT_UNUSED  ; Untyped                                           ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                           ;
+; CARRY_CHAIN            ; MANUAL       ; Untyped                                           ;
+; CARRY_CHAIN_LENGTH     ; 48           ; CARRY_CHAIN_LENGTH                                ;
+; NOT_GATE_PUSH_BACK     ; ON           ; NOT_GATE_PUSH_BACK                                ;
+; CARRY_CNT_EN           ; SMART        ; Untyped                                           ;
+; LABWIDE_SCLR           ; ON           ; Untyped                                           ;
+; USE_NEW_VERSION        ; TRUE         ; Untyped                                           ;
+; CBXI_PARAMETER         ; cntr_t8i     ; Untyped                                           ;
++------------------------+--------------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: counter:C7|lpm_counter:lpm_counter_component ;
++------------------------+--------------+---------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                              ;
++------------------------+--------------+---------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                        ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                      ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                      ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                    ;
+; LPM_WIDTH              ; 32           ; Signed Integer                                    ;
+; LPM_DIRECTION          ; UP           ; Untyped                                           ;
+; LPM_MODULUS            ; 0            ; Untyped                                           ;
+; LPM_AVALUE             ; UNUSED       ; Untyped                                           ;
+; LPM_SVALUE             ; UNUSED       ; Untyped                                           ;
+; LPM_PORT_UPDOWN        ; PORT_UNUSED  ; Untyped                                           ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                           ;
+; CARRY_CHAIN            ; MANUAL       ; Untyped                                           ;
+; CARRY_CHAIN_LENGTH     ; 48           ; CARRY_CHAIN_LENGTH                                ;
+; NOT_GATE_PUSH_BACK     ; ON           ; NOT_GATE_PUSH_BACK                                ;
+; CARRY_CNT_EN           ; SMART        ; Untyped                                           ;
+; LABWIDE_SCLR           ; ON           ; Untyped                                           ;
+; USE_NEW_VERSION        ; TRUE         ; Untyped                                           ;
+; CBXI_PARAMETER         ; cntr_t8i     ; Untyped                                           ;
++------------------------+--------------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: counter:CA|lpm_counter:lpm_counter_component ;
++------------------------+--------------+---------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                              ;
++------------------------+--------------+---------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                        ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                      ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                      ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                    ;
+; LPM_WIDTH              ; 32           ; Signed Integer                                    ;
+; LPM_DIRECTION          ; UP           ; Untyped                                           ;
+; LPM_MODULUS            ; 0            ; Untyped                                           ;
+; LPM_AVALUE             ; UNUSED       ; Untyped                                           ;
+; LPM_SVALUE             ; UNUSED       ; Untyped                                           ;
+; LPM_PORT_UPDOWN        ; PORT_UNUSED  ; Untyped                                           ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                           ;
+; CARRY_CHAIN            ; MANUAL       ; Untyped                                           ;
+; CARRY_CHAIN_LENGTH     ; 48           ; CARRY_CHAIN_LENGTH                                ;
+; NOT_GATE_PUSH_BACK     ; ON           ; NOT_GATE_PUSH_BACK                                ;
+; CARRY_CNT_EN           ; SMART        ; Untyped                                           ;
+; LABWIDE_SCLR           ; ON           ; Untyped                                           ;
+; USE_NEW_VERSION        ; TRUE         ; Untyped                                           ;
+; CBXI_PARAMETER         ; cntr_t8i     ; Untyped                                           ;
++------------------------+--------------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: counter:CB|lpm_counter:lpm_counter_component ;
++------------------------+--------------+---------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                              ;
++------------------------+--------------+---------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                        ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                      ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                      ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                    ;
+; LPM_WIDTH              ; 32           ; Signed Integer                                    ;
+; LPM_DIRECTION          ; UP           ; Untyped                                           ;
+; LPM_MODULUS            ; 0            ; Untyped                                           ;
+; LPM_AVALUE             ; UNUSED       ; Untyped                                           ;
+; LPM_SVALUE             ; UNUSED       ; Untyped                                           ;
+; LPM_PORT_UPDOWN        ; PORT_UNUSED  ; Untyped                                           ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                           ;
+; CARRY_CHAIN            ; MANUAL       ; Untyped                                           ;
+; CARRY_CHAIN_LENGTH     ; 48           ; CARRY_CHAIN_LENGTH                                ;
+; NOT_GATE_PUSH_BACK     ; ON           ; NOT_GATE_PUSH_BACK                                ;
+; CARRY_CNT_EN           ; SMART        ; Untyped                                           ;
+; LABWIDE_SCLR           ; ON           ; Untyped                                           ;
+; USE_NEW_VERSION        ; TRUE         ; Untyped                                           ;
+; CBXI_PARAMETER         ; cntr_t8i     ; Untyped                                           ;
++------------------------+--------------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: counter:CC|lpm_counter:lpm_counter_component ;
++------------------------+--------------+---------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                              ;
++------------------------+--------------+---------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                        ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                      ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                      ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                    ;
+; LPM_WIDTH              ; 32           ; Signed Integer                                    ;
+; LPM_DIRECTION          ; UP           ; Untyped                                           ;
+; LPM_MODULUS            ; 0            ; Untyped                                           ;
+; LPM_AVALUE             ; UNUSED       ; Untyped                                           ;
+; LPM_SVALUE             ; UNUSED       ; Untyped                                           ;
+; LPM_PORT_UPDOWN        ; PORT_UNUSED  ; Untyped                                           ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                           ;
+; CARRY_CHAIN            ; MANUAL       ; Untyped                                           ;
+; CARRY_CHAIN_LENGTH     ; 48           ; CARRY_CHAIN_LENGTH                                ;
+; NOT_GATE_PUSH_BACK     ; ON           ; NOT_GATE_PUSH_BACK                                ;
+; CARRY_CNT_EN           ; SMART        ; Untyped                                           ;
+; LABWIDE_SCLR           ; ON           ; Untyped                                           ;
+; USE_NEW_VERSION        ; TRUE         ; Untyped                                           ;
+; CBXI_PARAMETER         ; cntr_t8i     ; Untyped                                           ;
++------------------------+--------------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: counter:CD|lpm_counter:lpm_counter_component ;
++------------------------+--------------+---------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                              ;
++------------------------+--------------+---------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                        ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                      ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                      ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                    ;
+; LPM_WIDTH              ; 32           ; Signed Integer                                    ;
+; LPM_DIRECTION          ; UP           ; Untyped                                           ;
+; LPM_MODULUS            ; 0            ; Untyped                                           ;
+; LPM_AVALUE             ; UNUSED       ; Untyped                                           ;
+; LPM_SVALUE             ; UNUSED       ; Untyped                                           ;
+; LPM_PORT_UPDOWN        ; PORT_UNUSED  ; Untyped                                           ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                           ;
+; CARRY_CHAIN            ; MANUAL       ; Untyped                                           ;
+; CARRY_CHAIN_LENGTH     ; 48           ; CARRY_CHAIN_LENGTH                                ;
+; NOT_GATE_PUSH_BACK     ; ON           ; NOT_GATE_PUSH_BACK                                ;
+; CARRY_CNT_EN           ; SMART        ; Untyped                                           ;
+; LABWIDE_SCLR           ; ON           ; Untyped                                           ;
+; USE_NEW_VERSION        ; TRUE         ; Untyped                                           ;
+; CBXI_PARAMETER         ; cntr_t8i     ; Untyped                                           ;
++------------------------+--------------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: DataOut:D0|altsyncram:data_select_rtl_0                       ;
++------------------------------------+----------------------------------------------------------+----------------+
+; Parameter Name                     ; Value                                                    ; Type           ;
++------------------------------------+----------------------------------------------------------+----------------+
+; BYTE_SIZE_BLOCK                    ; 8                                                        ; Untyped        ;
+; AUTO_CARRY_CHAINS                  ; ON                                                       ; AUTO_CARRY     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                                      ; IGNORE_CARRY   ;
+; AUTO_CASCADE_CHAINS                ; ON                                                       ; AUTO_CASCADE   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                                      ; IGNORE_CASCADE ;
+; WIDTH_BYTEENA                      ; 1                                                        ; Untyped        ;
+; OPERATION_MODE                     ; ROM                                                      ; Untyped        ;
+; WIDTH_A                            ; 3                                                        ; Untyped        ;
+; WIDTHAD_A                          ; 10                                                       ; Untyped        ;
+; NUMWORDS_A                         ; 1024                                                     ; Untyped        ;
+; OUTDATA_REG_A                      ; UNREGISTERED                                             ; Untyped        ;
+; ADDRESS_ACLR_A                     ; NONE                                                     ; Untyped        ;
+; OUTDATA_ACLR_A                     ; NONE                                                     ; Untyped        ;
+; WRCONTROL_ACLR_A                   ; NONE                                                     ; Untyped        ;
+; INDATA_ACLR_A                      ; NONE                                                     ; Untyped        ;
+; BYTEENA_ACLR_A                     ; NONE                                                     ; Untyped        ;
+; WIDTH_B                            ; 1                                                        ; Untyped        ;
+; WIDTHAD_B                          ; 1                                                        ; Untyped        ;
+; NUMWORDS_B                         ; 1                                                        ; Untyped        ;
+; INDATA_REG_B                       ; CLOCK1                                                   ; Untyped        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                                   ; Untyped        ;
+; RDCONTROL_REG_B                    ; CLOCK1                                                   ; Untyped        ;
+; ADDRESS_REG_B                      ; CLOCK1                                                   ; Untyped        ;
+; OUTDATA_REG_B                      ; UNREGISTERED                                             ; Untyped        ;
+; BYTEENA_REG_B                      ; CLOCK1                                                   ; Untyped        ;
+; INDATA_ACLR_B                      ; NONE                                                     ; Untyped        ;
+; WRCONTROL_ACLR_B                   ; NONE                                                     ; Untyped        ;
+; ADDRESS_ACLR_B                     ; NONE                                                     ; Untyped        ;
+; OUTDATA_ACLR_B                     ; NONE                                                     ; Untyped        ;
+; RDCONTROL_ACLR_B                   ; NONE                                                     ; Untyped        ;
+; BYTEENA_ACLR_B                     ; NONE                                                     ; Untyped        ;
+; WIDTH_BYTEENA_A                    ; 1                                                        ; Untyped        ;
+; WIDTH_BYTEENA_B                    ; 1                                                        ; Untyped        ;
+; RAM_BLOCK_TYPE                     ; AUTO                                                     ; Untyped        ;
+; BYTE_SIZE                          ; 8                                                        ; Untyped        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                                     ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                                     ; Untyped        ;
+; INIT_FILE                          ; RS232coincidencecounter.RS232coincidencecounter0.rtl.mif ; Untyped        ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                                   ; Untyped        ;
+; MAXIMUM_DEPTH                      ; 0                                                        ; Untyped        ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                                   ; Untyped        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                                   ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                                   ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                                   ; Untyped        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                                          ; Untyped        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                                          ; Untyped        ;
+; ENABLE_ECC                         ; FALSE                                                    ; Untyped        ;
+; DEVICE_FAMILY                      ; Cyclone IV E                                             ; Untyped        ;
+; CBXI_PARAMETER                     ; altsyncram_5m21                                          ; Untyped        ;
++------------------------------------+----------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                    ;
++-------------------------------------------+-----------------------------------------+
+; Name                                      ; Value                                   ;
++-------------------------------------------+-----------------------------------------+
+; Number of entity instances                ; 1                                       ;
+; Entity Instance                           ; DataOut:D0|altsyncram:data_select_rtl_0 ;
+;     -- OPERATION_MODE                     ; ROM                                     ;
+;     -- WIDTH_A                            ; 3                                       ;
+;     -- NUMWORDS_A                         ; 1024                                    ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                            ;
+;     -- WIDTH_B                            ; 1                                       ;
+;     -- NUMWORDS_B                         ; 1                                       ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                  ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                            ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                    ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                               ;
++-------------------------------------------+-----------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 10.0 Build 218 06/27/2010 SJ Web Edition
+    Info: Processing started: Fri Jun 22 16:23:18 2012
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off RS232coincidencecounter -c RS232coincidencecounter
+Info: Found 2 design units, including 1 entities, in source file data_trigger_counter.vhd
+    Info: Found design unit 1: data_trigger_counter-SYN
+    Info: Found entity 1: data_trigger_counter
+Info: Found 2 design units, including 1 entities, in source file baud_counter.vhd
+    Info: Found design unit 1: baud_counter-SYN
+    Info: Found entity 1: baud_counter
+Info: Found 2 design units, including 1 entities, in source file counter.vhd
+    Info: Found design unit 1: counter-SYN
+    Info: Found entity 1: counter
+Info: Found 2 design units, including 1 entities, in source file rs232coincidencecounter.vhd
+    Info: Found design unit 1: RS232coincidencecounter-Behavior
+    Info: Found entity 1: RS232coincidencecounter
+Info: Found 2 design units, including 1 entities, in source file mux4to1.vhd
+    Info: Found design unit 1: mux4to1-Behavior
+    Info: Found entity 1: mux4to1
+Info: Found 2 design units, including 1 entities, in source file hexdisplay.vhd
+    Info: Found design unit 1: HexDisplay-Behavior
+    Info: Found entity 1: HexDisplay
+Info: Found 2 design units, including 1 entities, in source file dataout.vhd
+    Info: Found design unit 1: DataOut-Behavior
+    Info: Found entity 1: DataOut
+Info: Found 2 design units, including 1 entities, in source file coincidence_pulse.vhd
+    Info: Found design unit 1: coincidence_pulse-circuit
+    Info: Found entity 1: coincidence_pulse
+Info: Elaborating entity "RS232coincidencecounter" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at RS232coincidencecounter.vhd(35): used implicit default value for signal "EX_IO" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at RS232coincidencecounter.vhd(37): used implicit default value for signal "LEDR" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning: Synthesized away the following node(s):
+    Warning: Synthesized away the following LCELL buffer node(s):
+        Warning (14320): Synthesized away node "\Gen_delay_A:24:LC"
+Info: Elaborating entity "mux4to1" for hierarchy "mux4to1:MA"
+Warning (10492): VHDL Process Statement warning at mux4to1.vhd(29): signal "pulse" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at mux4to1.vhd(32): signal "pulse" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at mux4to1.vhd(32): signal "delayedpulse_2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at mux4to1.vhd(35): signal "pulse" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at mux4to1.vhd(35): signal "delayedpulse_1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at mux4to1.vhd(38): signal "pulse" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at mux4to1.vhd(38): signal "delayedpulse_0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at mux4to1.vhd(25): inferring latch(es) for signal or variable "pulseout", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "pulseout" at mux4to1.vhd(25)
+Info: Elaborating entity "coincidence_pulse" for hierarchy "coincidence_pulse:CP0"
+Info: Elaborating entity "data_trigger_counter" for hierarchy "data_trigger_counter:C0"
+Info: Elaborating entity "lpm_counter" for hierarchy "data_trigger_counter:C0|lpm_counter:lpm_counter_component"
+Info: Elaborated megafunction instantiation "data_trigger_counter:C0|lpm_counter:lpm_counter_component"
+Info: Instantiated megafunction "data_trigger_counter:C0|lpm_counter:lpm_counter_component" with the following parameter:
+    Info: Parameter "lpm_direction" = "UP"
+    Info: Parameter "lpm_port_updown" = "PORT_UNUSED"
+    Info: Parameter "lpm_type" = "LPM_COUNTER"
+    Info: Parameter "lpm_width" = "15"
+Info: Found 1 design units, including 1 entities, in source file db/cntr_u8i.tdf
+    Info: Found entity 1: cntr_u8i
+Info: Elaborating entity "cntr_u8i" for hierarchy "data_trigger_counter:C0|lpm_counter:lpm_counter_component|cntr_u8i:auto_generated"
+Info: Elaborating entity "baud_counter" for hierarchy "baud_counter:C1"
+Info: Elaborating entity "lpm_counter" for hierarchy "baud_counter:C1|lpm_counter:lpm_counter_component"
+Info: Elaborated megafunction instantiation "baud_counter:C1|lpm_counter:lpm_counter_component"
+Info: Instantiated megafunction "baud_counter:C1|lpm_counter:lpm_counter_component" with the following parameter:
+    Info: Parameter "lpm_direction" = "UP"
+    Info: Parameter "lpm_port_updown" = "PORT_UNUSED"
+    Info: Parameter "lpm_type" = "LPM_COUNTER"
+    Info: Parameter "lpm_width" = "13"
+Info: Found 1 design units, including 1 entities, in source file db/cntr_s8i.tdf
+    Info: Found entity 1: cntr_s8i
+Info: Elaborating entity "cntr_s8i" for hierarchy "baud_counter:C1|lpm_counter:lpm_counter_component|cntr_s8i:auto_generated"
+Info: Elaborating entity "counter" for hierarchy "counter:C4"
+Info: Elaborating entity "lpm_counter" for hierarchy "counter:C4|lpm_counter:lpm_counter_component"
+Info: Elaborated megafunction instantiation "counter:C4|lpm_counter:lpm_counter_component"
+Info: Instantiated megafunction "counter:C4|lpm_counter:lpm_counter_component" with the following parameter:
+    Info: Parameter "lpm_direction" = "UP"
+    Info: Parameter "lpm_port_updown" = "PORT_UNUSED"
+    Info: Parameter "lpm_type" = "LPM_COUNTER"
+    Info: Parameter "lpm_width" = "32"
+Info: Found 1 design units, including 1 entities, in source file db/cntr_t8i.tdf
+    Info: Found entity 1: cntr_t8i
+Info: Elaborating entity "cntr_t8i" for hierarchy "counter:C4|lpm_counter:lpm_counter_component|cntr_t8i:auto_generated"
+Info: Elaborating entity "DataOut" for hierarchy "DataOut:D0"
+Warning: LATCH primitive "mux4to1:MB|pulseout" is permanently enabled
+Warning: LATCH primitive "mux4to1:MC|pulseout" is permanently enabled
+Warning: LATCH primitive "mux4to1:MD|pulseout" is permanently enabled
+Warning: LATCH primitive "mux4to1:MA|pulseout" is permanently enabled
+Warning: Clock multiplexers are found and protected
+    Warning: Found clock multiplexer mux4to1:MB|pulseout~synth
+    Warning: Found clock multiplexer mux4to1:MD|pulseout~synth
+    Warning: Found clock multiplexer mux4to1:MC|pulseout~synth
+    Warning: Found clock multiplexer mux4to1:MA|pulseout~synth
+Info: Inferred 1 megafunctions from design logic
+    Info: Inferred altsyncram megafunction from the following design logic: "DataOut:D0|data_select~0"
+        Info: Parameter OPERATION_MODE set to ROM
+        Info: Parameter WIDTH_A set to 3
+        Info: Parameter WIDTHAD_A set to 10
+        Info: Parameter NUMWORDS_A set to 1024
+        Info: Parameter OUTDATA_REG_A set to UNREGISTERED
+        Info: Parameter RAM_BLOCK_TYPE set to AUTO
+        Info: Parameter INIT_FILE set to RS232coincidencecounter.RS232coincidencecounter0.rtl.mif
+Info: Elaborated megafunction instantiation "DataOut:D0|altsyncram:data_select_rtl_0"
+Info: Instantiated megafunction "DataOut:D0|altsyncram:data_select_rtl_0" with the following parameter:
+    Info: Parameter "OPERATION_MODE" = "ROM"
+    Info: Parameter "WIDTH_A" = "3"
+    Info: Parameter "WIDTHAD_A" = "10"
+    Info: Parameter "NUMWORDS_A" = "1024"
+    Info: Parameter "OUTDATA_REG_A" = "UNREGISTERED"
+    Info: Parameter "RAM_BLOCK_TYPE" = "AUTO"
+    Info: Parameter "INIT_FILE" = "RS232coincidencecounter.RS232coincidencecounter0.rtl.mif"
+Info: Found 1 design units, including 1 entities, in source file db/altsyncram_5m21.tdf
+    Info: Found entity 1: altsyncram_5m21
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "EX_IO[0]" is stuck at GND
+    Warning (13410): Pin "EX_IO[1]" is stuck at GND
+    Warning (13410): Pin "EX_IO[2]" is stuck at GND
+    Warning (13410): Pin "EX_IO[3]" is stuck at GND
+    Warning (13410): Pin "EX_IO[4]" is stuck at GND
+    Warning (13410): Pin "EX_IO[5]" is stuck at GND
+    Warning (13410): Pin "EX_IO[6]" is stuck at GND
+    Warning (13410): Pin "LEDR[0]" is stuck at GND
+    Warning (13410): Pin "LEDR[1]" is stuck at GND
+    Warning (13410): Pin "LEDR[2]" is stuck at GND
+    Warning (13410): Pin "LEDR[3]" is stuck at GND
+    Warning (13410): Pin "LEDR[4]" is stuck at GND
+    Warning (13410): Pin "LEDR[5]" is stuck at GND
+    Warning (13410): Pin "LEDR[6]" is stuck at GND
+    Warning (13410): Pin "LEDR[7]" is stuck at GND
+    Warning (13410): Pin "LEDR[8]" is stuck at GND
+    Warning (13410): Pin "LEDR[9]" is stuck at GND
+    Warning (13410): Pin "LEDR[10]" is stuck at GND
+    Warning (13410): Pin "LEDR[11]" is stuck at GND
+    Warning (13410): Pin "LEDR[12]" is stuck at GND
+    Warning (13410): Pin "LEDR[13]" is stuck at GND
+    Warning (13410): Pin "LEDR[14]" is stuck at GND
+    Warning (13410): Pin "LEDR[15]" is stuck at GND
+    Warning (13410): Pin "LEDR[16]" is stuck at GND
+    Warning (13410): Pin "LEDR[17]" is stuck at GND
+Info: Timing-Driven Synthesis is running
+Info: Found the following redundant logic cells in design
+    Info (17048): Logic cell "C_internal[8]"
+    Info (17048): Logic cell "C_internal[16]"
+    Info (17048): Logic cell "C_internal[24]"
+    Info (17048): Logic cell "B_internal[8]"
+    Info (17048): Logic cell "B_internal[16]"
+    Info (17048): Logic cell "B_internal[24]"
+    Info (17048): Logic cell "D_internal[8]"
+    Info (17048): Logic cell "D_internal[16]"
+    Info (17048): Logic cell "D_internal[24]"
+    Info (17048): Logic cell "A_internal[8]"
+    Info (17048): Logic cell "A_internal[16]"
+    Info (17048): Logic cell "A_internal[24]"
+    Info (17048): Logic cell "\Gen_delay_C:7:LC"
+    Info (17048): Logic cell "\Gen_delay_C:15:LC"
+    Info (17048): Logic cell "\Gen_delay_C:23:LC"
+    Info (17048): Logic cell "\Gen_delay_B:7:LC"
+    Info (17048): Logic cell "\Gen_delay_B:15:LC"
+    Info (17048): Logic cell "\Gen_delay_B:23:LC"
+    Info (17048): Logic cell "\Gen_delay_D:7:LC"
+    Info (17048): Logic cell "\Gen_delay_D:15:LC"
+    Info (17048): Logic cell "\Gen_delay_D:23:LC"
+    Info (17048): Logic cell "\Gen_delay_A:7:LC"
+    Info (17048): Logic cell "\Gen_delay_A:15:LC"
+    Info (17048): Logic cell "\Gen_delay_A:23:LC"
+    Info (17048): Logic cell "C_internal[7]"
+    Info (17048): Logic cell "C_internal[15]"
+    Info (17048): Logic cell "C_internal[23]"
+    Info (17048): Logic cell "B_internal[7]"
+    Info (17048): Logic cell "B_internal[15]"
+    Info (17048): Logic cell "B_internal[23]"
+    Info (17048): Logic cell "D_internal[7]"
+    Info (17048): Logic cell "D_internal[15]"
+    Info (17048): Logic cell "D_internal[23]"
+    Info (17048): Logic cell "A_internal[7]"
+    Info (17048): Logic cell "A_internal[15]"
+    Info (17048): Logic cell "A_internal[23]"
+    Info (17048): Logic cell "\Gen_delay_C:6:LC"
+    Info (17048): Logic cell "\Gen_delay_C:14:LC"
+    Info (17048): Logic cell "\Gen_delay_C:22:LC"
+    Info (17048): Logic cell "\Gen_delay_B:6:LC"
+    Info (17048): Logic cell "\Gen_delay_B:14:LC"
+    Info (17048): Logic cell "\Gen_delay_B:22:LC"
+    Info (17048): Logic cell "\Gen_delay_D:6:LC"
+    Info (17048): Logic cell "\Gen_delay_D:14:LC"
+    Info (17048): Logic cell "\Gen_delay_D:22:LC"
+    Info (17048): Logic cell "\Gen_delay_A:6:LC"
+    Info (17048): Logic cell "\Gen_delay_A:14:LC"
+    Info (17048): Logic cell "\Gen_delay_A:22:LC"
+    Info (17048): Logic cell "C_internal[6]"
+    Info (17048): Logic cell "C_internal[14]"
+    Info (17048): Logic cell "C_internal[22]"
+    Info (17048): Logic cell "B_internal[6]"
+    Info (17048): Logic cell "B_internal[14]"
+    Info (17048): Logic cell "B_internal[22]"
+    Info (17048): Logic cell "D_internal[6]"
+    Info (17048): Logic cell "D_internal[14]"
+    Info (17048): Logic cell "D_internal[22]"
+    Info (17048): Logic cell "A_internal[6]"
+    Info (17048): Logic cell "A_internal[14]"
+    Info (17048): Logic cell "A_internal[22]"
+    Info (17048): Logic cell "\Gen_delay_C:5:LC"
+    Info (17048): Logic cell "\Gen_delay_C:13:LC"
+    Info (17048): Logic cell "\Gen_delay_C:21:LC"
+    Info (17048): Logic cell "\Gen_delay_B:5:LC"
+    Info (17048): Logic cell "\Gen_delay_B:13:LC"
+    Info (17048): Logic cell "\Gen_delay_B:21:LC"
+    Info (17048): Logic cell "\Gen_delay_D:5:LC"
+    Info (17048): Logic cell "\Gen_delay_D:13:LC"
+    Info (17048): Logic cell "\Gen_delay_D:21:LC"
+    Info (17048): Logic cell "\Gen_delay_A:5:LC"
+    Info (17048): Logic cell "\Gen_delay_A:13:LC"
+    Info (17048): Logic cell "\Gen_delay_A:21:LC"
+    Info (17048): Logic cell "C_internal[5]"
+    Info (17048): Logic cell "C_internal[13]"
+    Info (17048): Logic cell "C_internal[21]"
+    Info (17048): Logic cell "B_internal[5]"
+    Info (17048): Logic cell "B_internal[13]"
+    Info (17048): Logic cell "B_internal[21]"
+    Info (17048): Logic cell "D_internal[5]"
+    Info (17048): Logic cell "D_internal[13]"
+    Info (17048): Logic cell "D_internal[21]"
+    Info (17048): Logic cell "A_internal[5]"
+    Info (17048): Logic cell "A_internal[13]"
+    Info (17048): Logic cell "A_internal[21]"
+    Info (17048): Logic cell "\Gen_delay_C:4:LC"
+    Info (17048): Logic cell "\Gen_delay_C:12:LC"
+    Info (17048): Logic cell "\Gen_delay_C:20:LC"
+    Info (17048): Logic cell "\Gen_delay_B:4:LC"
+    Info (17048): Logic cell "\Gen_delay_B:12:LC"
+    Info (17048): Logic cell "\Gen_delay_B:20:LC"
+    Info (17048): Logic cell "\Gen_delay_D:4:LC"
+    Info (17048): Logic cell "\Gen_delay_D:12:LC"
+    Info (17048): Logic cell "\Gen_delay_D:20:LC"
+    Info (17048): Logic cell "\Gen_delay_A:4:LC"
+    Info (17048): Logic cell "\Gen_delay_A:12:LC"
+    Info (17048): Logic cell "\Gen_delay_A:20:LC"
+    Info (17048): Logic cell "C_internal[4]"
+    Info (17048): Logic cell "C_internal[12]"
+    Info (17048): Logic cell "C_internal[20]"
+    Info (17048): Logic cell "B_internal[4]"
+    Info (17048): Logic cell "B_internal[12]"
+    Info (17048): Logic cell "B_internal[20]"
+    Info (17048): Logic cell "D_internal[4]"
+    Info (17048): Logic cell "D_internal[12]"
+    Info (17048): Logic cell "D_internal[20]"
+    Info (17048): Logic cell "A_internal[4]"
+    Info (17048): Logic cell "A_internal[12]"
+    Info (17048): Logic cell "A_internal[20]"
+    Info (17048): Logic cell "\Gen_delay_C:3:LC"
+    Info (17048): Logic cell "\Gen_delay_C:11:LC"
+    Info (17048): Logic cell "\Gen_delay_C:19:LC"
+    Info (17048): Logic cell "\Gen_delay_B:3:LC"
+    Info (17048): Logic cell "\Gen_delay_B:11:LC"
+    Info (17048): Logic cell "\Gen_delay_B:19:LC"
+    Info (17048): Logic cell "\Gen_delay_D:3:LC"
+    Info (17048): Logic cell "\Gen_delay_D:11:LC"
+    Info (17048): Logic cell "\Gen_delay_D:19:LC"
+    Info (17048): Logic cell "\Gen_delay_A:3:LC"
+    Info (17048): Logic cell "\Gen_delay_A:11:LC"
+    Info (17048): Logic cell "\Gen_delay_A:19:LC"
+    Info (17048): Logic cell "C_internal[3]"
+    Info (17048): Logic cell "C_internal[11]"
+    Info (17048): Logic cell "C_internal[19]"
+    Info (17048): Logic cell "B_internal[3]"
+    Info (17048): Logic cell "B_internal[11]"
+    Info (17048): Logic cell "B_internal[19]"
+    Info (17048): Logic cell "D_internal[3]"
+    Info (17048): Logic cell "D_internal[11]"
+    Info (17048): Logic cell "D_internal[19]"
+    Info (17048): Logic cell "A_internal[3]"
+    Info (17048): Logic cell "A_internal[11]"
+    Info (17048): Logic cell "A_internal[19]"
+    Info (17048): Logic cell "\Gen_delay_C:2:LC"
+    Info (17048): Logic cell "\Gen_delay_C:10:LC"
+    Info (17048): Logic cell "\Gen_delay_C:18:LC"
+    Info (17048): Logic cell "\Gen_delay_B:2:LC"
+    Info (17048): Logic cell "\Gen_delay_B:10:LC"
+    Info (17048): Logic cell "\Gen_delay_B:18:LC"
+    Info (17048): Logic cell "\Gen_delay_D:2:LC"
+    Info (17048): Logic cell "\Gen_delay_D:10:LC"
+    Info (17048): Logic cell "\Gen_delay_D:18:LC"
+    Info (17048): Logic cell "\Gen_delay_A:2:LC"
+    Info (17048): Logic cell "\Gen_delay_A:10:LC"
+    Info (17048): Logic cell "\Gen_delay_A:18:LC"
+    Info (17048): Logic cell "C_internal[2]"
+    Info (17048): Logic cell "C_internal[10]"
+    Info (17048): Logic cell "C_internal[18]"
+    Info (17048): Logic cell "B_internal[2]"
+    Info (17048): Logic cell "B_internal[10]"
+    Info (17048): Logic cell "B_internal[18]"
+    Info (17048): Logic cell "D_internal[2]"
+    Info (17048): Logic cell "D_internal[10]"
+    Info (17048): Logic cell "D_internal[18]"
+    Info (17048): Logic cell "A_internal[2]"
+    Info (17048): Logic cell "A_internal[10]"
+    Info (17048): Logic cell "A_internal[18]"
+    Info (17048): Logic cell "\Gen_delay_C:1:LC"
+    Info (17048): Logic cell "\Gen_delay_C:9:LC"
+    Info (17048): Logic cell "\Gen_delay_C:17:LC"
+    Info (17048): Logic cell "\Gen_delay_B:1:LC"
+    Info (17048): Logic cell "\Gen_delay_B:9:LC"
+    Info (17048): Logic cell "\Gen_delay_B:17:LC"
+    Info (17048): Logic cell "\Gen_delay_D:1:LC"
+    Info (17048): Logic cell "\Gen_delay_D:9:LC"
+    Info (17048): Logic cell "\Gen_delay_D:17:LC"
+    Info (17048): Logic cell "\Gen_delay_A:1:LC"
+    Info (17048): Logic cell "\Gen_delay_A:9:LC"
+    Info (17048): Logic cell "\Gen_delay_A:17:LC"
+    Info (17048): Logic cell "C_internal[1]"
+    Info (17048): Logic cell "C_internal[9]"
+    Info (17048): Logic cell "C_internal[17]"
+    Info (17048): Logic cell "B_internal[1]"
+    Info (17048): Logic cell "B_internal[9]"
+    Info (17048): Logic cell "B_internal[17]"
+    Info (17048): Logic cell "D_internal[1]"
+    Info (17048): Logic cell "D_internal[9]"
+    Info (17048): Logic cell "D_internal[17]"
+    Info (17048): Logic cell "A_internal[1]"
+    Info (17048): Logic cell "A_internal[9]"
+    Info (17048): Logic cell "A_internal[17]"
+    Info (17048): Logic cell "\Gen_delay_C:0:LC"
+    Info (17048): Logic cell "\Gen_delay_C:8:LC"
+    Info (17048): Logic cell "\Gen_delay_C:16:LC"
+    Info (17048): Logic cell "\Gen_delay_B:0:LC"
+    Info (17048): Logic cell "\Gen_delay_B:8:LC"
+    Info (17048): Logic cell "\Gen_delay_B:16:LC"
+    Info (17048): Logic cell "\Gen_delay_D:0:LC"
+    Info (17048): Logic cell "\Gen_delay_D:8:LC"
+    Info (17048): Logic cell "\Gen_delay_D:16:LC"
+    Info (17048): Logic cell "\Gen_delay_A:0:LC"
+    Info (17048): Logic cell "\Gen_delay_A:8:LC"
+    Info (17048): Logic cell "\Gen_delay_A:16:LC"
+    Info (17048): Logic cell "C_internal[0]"
+    Info (17048): Logic cell "B_internal[0]"
+    Info (17048): Logic cell "D_internal[0]"
+    Info (17048): Logic cell "A_internal[0]"
+    Info (17048): Logic cell "LCC_1"
+    Info (17048): Logic cell "LCB_1"
+    Info (17048): Logic cell "LCD_1"
+    Info (17048): Logic cell "LCA_1"
+Info: Generating hard_block partition "hard_block:auto_generated_inst"
+Info: Implemented 1039 device resources after synthesis - the final resource count might be different
+    Info: Implemented 23 input pins
+    Info: Implemented 26 output pins
+    Info: Implemented 987 logic cells
+    Info: Implemented 3 RAM segments
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 48 warnings
+    Info: Peak virtual memory: 269 megabytes
+    Info: Processing ended: Fri Jun 22 16:23:28 2012
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:09
+
+
