@@ -2,4 +2,4 @@ This is the companion repo to my undergraduate thesis "A Quantum Optics Lab Usin
 
 Specifically, it contains data analysis in jupyter notebooks, VHDL code to run on the Altegra Board, and relevant Labview Programs which we used.
 
-Note: I am not the sole author of much of this code.
+I'd like to thank all those who contributed code and technical assistance to this project.
